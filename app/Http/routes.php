@@ -17,6 +17,31 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function(){
+	return view('index');
+});
+// Route home page
+Route::get('/about', function() {
+	return view('about');
+});
+// Route about page
+Route::get('/contact', function(){
+	return view('contact');
+});
+// Route contact page
+Route::get('/service', function(){
+	return view('service');
+});
+// Route service page
+Route::get('/admin', function(){
+	return view('admin');
+});
+
+// Test
+Route::get('/test', function(){
+	return view('test');
+});
+// Route admin page
 /*
 |--------------------------------------------------------------------------
 | Application Routes
