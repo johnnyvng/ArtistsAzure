@@ -38,9 +38,12 @@ Route::get('/admin', function(){
 });
 
 // Test
-Route::get('/test', function(){
+/*Route::get('/test', function(){
 	return view('test');
-});
+});*/
+
+Route::get('/test', 'ServicesController@index');
+
 // Route admin page
 /*
 |--------------------------------------------------------------------------
