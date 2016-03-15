@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tempo</title>
+<title>The Outdoor Artists</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -48,9 +48,15 @@
   <div class="container"> 
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
+      
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="/test"><i class="fa fa-flag-checkered fa-flip-horizontal"></i>Outdoor Artists<strong></strong></a> </div>
-    
+      <!-- REPLACE
+      <a class="navbar-brand" href="/test"><i class="fa fa-flag-checkered fa-flip-horizontal"></i>Landscaping<strong></strong></a> </div> 
+      WITH
+      -->
+      <a class="navbar-brand" href="/test">
+        <img src="img/logo.jpg" width=100 height=100></img>
+      </a> </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -71,8 +77,8 @@
 <!-- Header -->
 <header class="text-center" name="home">
   <div class="intro-text">
-    <h1 class="wow fadeInDown">We are <strong><span class="color">Tempo</span></strong></h1>
-    <p class="wow fadeInDown">a creative digital agency from New York</p>
+    <h1 class="wow fadeInDown">We are <strong><span class="color">Outdoor Artists</span></strong></h1>
+    <p class="wow fadeInDown">a creative and passionate artists from Washington DC</p>
     <a href="#works-section" class="btn btn-default btn-lg page-scroll wow fadeInUp" data-wow-delay="200ms">Our Portfolio</a> </div>
 </header>
 
