@@ -32,7 +32,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo.jpg" class="img-responsive" alt="logo"></a>
+                <a class="navbar-brand" href="/home"><img src="img/logo.jpg" class="img-responsive" alt="logo"></a>
               </div>
             </div>
             <div class="col-md-8 pdl pdr">
@@ -41,9 +41,9 @@
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="service.html">Featured Service</a></li>
+                  <li class="active"><a href="/home">Home</a></li>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/services">Featured Service</a></li>
                   <!-- <li><a href="">Projects</a></li> -->
                   <li><a href="contact.html">Contact Us</a></li>
                 </ul>

@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>About us</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -32,7 +32,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo.jpg" class="img-responsive" alt="logo"></a>
+                <a class="navbar-brand" href="/home"><img src="img/logo.jpg" class="img-responsive" alt="logo"></a>
               </div>
             </div>
             <div class="col-md-8 pdl pdr">
@@ -41,9 +41,9 @@
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li><a href="index.html">Home</a></li>
-                  <li class="active"><a href="about.html">About Us</a></li>
-                  <li><a href="service.html">Featured Service</a></li>
+                  <li><a href="/home">Home</a></li>
+                  <li class="active"><a href="/about">About Us</a></li>
+                  <li><a href="/services">Featured Service</a></li>
                   <!-- <li><a href="">Projects</a></li> -->
                   <li><a href="contact.html">Contact Us</a></li>
                 </ul>

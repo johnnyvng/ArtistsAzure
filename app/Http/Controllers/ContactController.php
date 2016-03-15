@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ServicesController extends Controller
+class ContactController extends Controller
 {
-	public function services(){
-		return view('service');
-	}
+    public function contact(){
+    	return view('contact');
+    }
 }
