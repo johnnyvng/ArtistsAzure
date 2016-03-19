@@ -10,9 +10,9 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {	
 
-	public function test(){
+/*	public function test(){
 		return view('test');
-	}
+	}*/
 
     public function index(){
     	return view('index');
@@ -20,10 +20,5 @@ class HomeController extends Controller
 
     public function about(){
     	return view('about');
-    }
-
-    // this is the page test
-    public function page_dave(){
-    	return view('page-dave');
     }
 }

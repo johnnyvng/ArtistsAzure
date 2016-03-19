@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Page;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AjaxController extends Controller
+class PageAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +17,8 @@ class AjaxController extends Controller
     public function index()
     {
         //
+        $pages = Page::orderBy('page_label')->get();
+        return response()->json($pages);
     }
 
     /**
@@ -38,6 +40,9 @@ class AjaxController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        $page = Page::create($data);
+        return response()->json($page);
     }
 
     /**
@@ -49,6 +54,8 @@ class AjaxController extends Controller
     public function show($id)
     {
         //
+        $page = Page::find($id);
+        return response()->json($page);
     }
 
     /**
@@ -72,6 +79,13 @@ class AjaxController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = $request->all();
+        unset($data['id']);
+        unset($data['created_at']);
+        unset($data['updated_at']);
+
+        $page = Page::where('id', $id)->update($data);
+        return response()->json($page);
     }
 
     /**

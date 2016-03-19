@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserTableSeeder::class);
+    	// run this command "composer dump-autoload" before run php artisan migrate:refresh --seed because it will clear the caches
+         $this->call(PagesSeeder::class);
     }
 
 	protected function seedFromCSV($filename)
