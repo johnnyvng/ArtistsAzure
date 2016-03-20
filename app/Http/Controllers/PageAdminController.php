@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Page;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Page;
+use Log;
+
 
 class PageAdminController extends Controller
 {
@@ -16,7 +19,6 @@ class PageAdminController extends Controller
      */
     public function index()
     {
-        //
         $pages = Page::orderBy('page_label')->get();
         return response()->json($pages);
     }
@@ -28,7 +30,7 @@ class PageAdminController extends Controller
      */
     public function create()
     {
-        //
+        // We don't need this with AngularJS
     }
 
     /**
@@ -39,7 +41,6 @@ class PageAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $data = $request->all();
         $page = Page::create($data);
         return response()->json($page);
@@ -53,7 +54,6 @@ class PageAdminController extends Controller
      */
     public function show($id)
     {
-        //
         $page = Page::find($id);
         return response()->json($page);
     }
@@ -66,7 +66,7 @@ class PageAdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        // We don't need this with AngularJS
     }
 
     /**
@@ -78,7 +78,6 @@ class PageAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $data = $request->all();
         unset($data['id']);
         unset($data['created_at']);

@@ -9,11 +9,8 @@ use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
-    public function admin_edit(){
-    	return view('admin-edit');
-    }
-
-    public function index(){
-    	return view('admin');
+    public function index()
+    {
+		return view('admin');
     }
 }

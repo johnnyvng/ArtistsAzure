@@ -48,7 +48,7 @@ Route::get('/admin', function(){
 |--------------------------------------------------------------------------
 */
 Route::get('/about', 'PageController@about');
-Route::get('/admin','AdminController@index');
+Route::get('/admin', 'AdminController@index');
 Route::resource('ajax/page', 'PageAdminController');
 
 /*
