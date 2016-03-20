@@ -13,9 +13,8 @@ class PageController extends Controller
 {
     public function about()
     {
-    	
-         $page = Page::where('page_label', 'about')->first();
-         return view('about', $page);
-
+        $page = Page::where('page_label', 'about')->first();
+    
+        return view('about', $page);
     }
 }
