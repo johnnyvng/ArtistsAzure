@@ -15,8 +15,6 @@ class AddCategoryIDInServicesTable extends Migration
         Schema::table('services', function (Blueprint $table) {
             //
             /*$table->dropForeign(['categoryID']);*/
-
-
             $table->foreign('categoryID')
             ->references('categoryID')
             ->on('categories')
@@ -37,7 +35,6 @@ class AddCategoryIDInServicesTable extends Migration
             //
             $table->dropForeign('services_categoryID_foreign');
             $table->dropColumn('categoryID');
-
         });
     }
 }

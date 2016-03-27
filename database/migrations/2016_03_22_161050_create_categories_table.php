@@ -12,12 +12,14 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+         Schema::create('categories', function (Blueprint $table) {
             $table->increments('categoryID');
-            $table->string('name', 50);
-            $table->text('description');
+            /*$table->timestamps();*/
+            $table->string('category_name', 256)->nullable();
+            $table->text('category_content')->nullable();
+            $table->text('category_discription')->nullable();
         });
-
+            
     }
 
     /**
@@ -27,6 +29,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('categories');        
+        Schema::drop('categories');
     }
 }

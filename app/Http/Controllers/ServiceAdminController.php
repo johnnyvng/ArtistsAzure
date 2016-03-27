@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Page;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Page;
+use App\Service;
+use Log;
 
-class PageAdminController extends Controller
+class ServiceAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +19,8 @@ class PageAdminController extends Controller
     public function index()
     {
         //
-        $pages = Page::orderBy('page_label')->get();
-        return response()->json($pages);
+        $servicePage = Service::orderBy('service_name')->get();
+        return response()->json($servicePage);
     }
 
     /**
@@ -39,10 +41,11 @@ class PageAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $data = $request->all();
-        $page = Page::create($data);
-        return response()->json($page);
+        //        
+        $serviceData = $request->all();
+        $servicePage = Service::create($serviceData);
+        return response()->json($servicePage);
+
     }
 
     /**
@@ -54,8 +57,8 @@ class PageAdminController extends Controller
     public function show($id)
     {
         //
-        $page = Page::find($id);
-        return response()->json($page);
+        $service = Service::find($id);
+        return response()->json($service);
     }
 
     /**
@@ -79,13 +82,12 @@ class PageAdminController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $data = $request->all();
-        unset($data['id']);
-        unset($data['created_at']);
-        unset($data['updated_at']);
+        $serviceData = $request->all();
+        unset($serviceData['id']);
 
-        $page = Page::where('id', $id)->update($data);
-        return response()->json($page);
+        $servicePage = Service::where('service_name', $id)->update($serviceData);
+        return response()->json($servicePage);
+
     }
 
     /**
