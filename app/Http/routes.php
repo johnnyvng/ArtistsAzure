@@ -48,7 +48,7 @@ Route::get('/admin', function(){
 |--------------------------------------------------------------------------
 */
 Route::get('/about', 'PageController@about'); // Edit the about page
-Route::get('/home', 'PageController@index'); // Edit the home page*/
+// Route::get('/home', 'PageController@index'); // Edit the home page*/
 Route::get('/', 'PageController@index'); // Edit the home page
 Route::get('/admin','AdminController@index');
 Route::resource('ajax/page', 'PageAdminController');
@@ -112,3 +112,9 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});

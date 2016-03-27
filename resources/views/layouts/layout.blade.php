@@ -36,7 +36,7 @@ This is the master layout for pages include about, contact, home, services
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('home')}}"><img src="{{asset('img/logo.jpg')}}" class="img-responsive" alt="logo"></a>
+                <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/logo.jpg')}}" class="img-responsive" alt="logo"></a>
               </div>
             </div>
             <div class="col-md-8 pdl pdr">
@@ -45,9 +45,9 @@ This is the master layout for pages include about, contact, home, services
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li><a href="{{url('home')}}">Home</a></li>
+                  <li><a href="{{url('/')}}">Home</a></li>
                   <li><a href="{{url('about')}}">About Us</a></li>
-                  <li><a href="{{url('services')}}">Featured Service</a></li>
+                  <li><a href="{{url('service')}}">Featured Service</a></li>
                   <!-- <li><a href="">Projects</a></li> -->
                   <li><a href="{{url('contact')}}">Contact Us</a></li>
                 </ul>
