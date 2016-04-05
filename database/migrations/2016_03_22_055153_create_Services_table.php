@@ -18,7 +18,7 @@ class CreateServicesTable extends Migration
             $table->integer('categoryID')->unsigned()->nullable();
             $table->string('service_name', 256)->nullable();
             $table->text('service_content')->nullable();
-            $table->text('discription')->nullable();
+            $table->text('description')->nullable();
             $table->float('prices');
         });
     }

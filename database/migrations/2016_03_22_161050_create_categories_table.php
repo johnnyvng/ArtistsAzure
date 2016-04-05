@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             /*$table->timestamps();*/
             $table->string('category_name', 256)->nullable();
             $table->text('category_content')->nullable();
-            $table->text('category_discription')->nullable();
+            $table->text('category_description')->nullable();
         });
             
     }
