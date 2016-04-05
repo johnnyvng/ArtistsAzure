@@ -50,8 +50,6 @@ Route::get('/admin', function(){
 Route::get('/about', 'PageController@about'); // Edit the about page
 // Route::get('/home', 'PageController@index'); // Edit the home page*/
 Route::get('/', 'PageController@index'); // Edit the home page
-Route::get('/admin','AdminController@index');
-Route::resource('ajax/page', 'PageAdminController');
 
 
 /*
@@ -59,8 +57,11 @@ Route::resource('ajax/page', 'PageAdminController');
 | // Route to edit home and about pages using the admin site (Pages)
 |--------------------------------------------------------------------------
 */
+/*
 Route::get('/service', 'ServiceController@service');
 Route::resource('ajax/service', 'ServiceAdminController');
+*/
+
 /*
 |--------------------------------------------------------------------------
 | Project.app Routes
@@ -108,13 +109,18 @@ Route::get('/test', function(){
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
+    Route::get('/admin','AdminController@index');
+
+	Route::resource('ajax/page', 'PageAdminController');
+    Route::resource('ajax/service', 'ServiceAdminController');
+
+
+    Route::get('/service', 'ServiceController@service');
+    
+
 });

@@ -46,10 +46,17 @@ This is the master layout for pages include about, contact, home, services
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                   <li><a href="{{url('/')}}">Home</a></li>
-                  <li><a href="{{url('about')}}">About Us</a></li>
-                  <li><a href="{{url('service')}}">Featured Service</a></li>
-                  <!-- <li><a href="">Projects</a></li> -->
-                  <li><a href="{{url('contact')}}">Contact Us</a></li>
+                  <li><a href="{{url('/about')}}">About Us</a></li>
+                  <li class="dropdown">
+                    <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Featured Services <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{url('/service')}}">Services</a></li>
+                        <li><a href="{{url('/government')}}">Government</a></li>
+                        <li><a href="{{url('/largeestate')}}">Large Estate</a></li>
+                        <li><a href="{{url('/commercial')}}">Commercial</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="{{url('/contact')}}">Contact Us</a></li>
                 </ul>
               </div><!--/.navbar-collapse -->
             </div>
@@ -58,7 +65,7 @@ This is the master layout for pages include about, contact, home, services
       </nav>
     </header>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
       <script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
       <script src="js/allinone_carousel.js" type="text/javascript"></script>
       <script src="js/vendor/bootstrap.min.js"></script>
@@ -90,33 +97,33 @@ This is the master layout for pages include about, contact, home, services
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 @yield('content')
-		<footer class="footer-wrapper" role="siteinfo">
-		      <div class="container">
-		         <div class="row">
-		            <div class="col-md-3">
-		               <div class="footer-widget">
-		                   <h3 class="title">Location</h3>
-		               </div><!--footer widget-->
-		            </div>
-		            <div class="col-md-3">
-		               <div class="footer-widget">
-		                   <h3 class="title">Faq</h3>
-		               </div><!--footer widget-->
-		            </div>
-		            <div class="col-md-3">
-		               <div class="footer-widget">
-		                   <h3 class="title">Career</h3>
-		               </div><!--footer widget-->
-		            </div>
-		            <div class="col-md-3">
-		              <div class="footer-widget">
-		                   <h3 class="title">Social Media</h3>
-		               </div><!--footer widget-->
-		            </div>
-		         </div>
-		      </div><!--container-->
-		</footer>
+    <footer class="footer-wrapper" role="siteinfo">
+          <div class="container">
+             <div class="row">
+                <div class="col-md-3">
+                   <div class="footer-widget">
+                       <h3 class="title">Location</h3>
+                   </div><!--footer widget-->
+                </div>
+                <div class="col-md-3">
+                   <div class="footer-widget">
+                       <h3 class="title">Faq</h3>
+                   </div><!--footer widget-->
+                </div>
+                <div class="col-md-3">
+                   <div class="footer-widget">
+                       <h3 class="title">Career</h3>
+                   </div><!--footer widget-->
+                </div>
+                <div class="col-md-3">
+                  <div class="footer-widget">
+                       <h3 class="title">Social Media</h3>
+                   </div><!--footer widget-->
+                </div>
+             </div>
+          </div><!--container-->
+    </footer>
 
 
-	</body>
+  </body>
 </html>

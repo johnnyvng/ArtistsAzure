@@ -18,6 +18,7 @@ class PageAdminController extends Controller
     {
         //
         $pages = Page::orderBy('page_label')->get();
+        
         return response()->json($pages);
     }
 

@@ -46,9 +46,17 @@
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                   <li><a href="{{url('/')}}">Home</a></li>
-                  <li><a href="{{url('about')}}">About Us</a></li>
-                  <li><a href="{{url('service')}}">Featured Service</a></li>
-                  <li><a href="{{url('contact')}}">Contact Us</a></li>
+                  <li><a href="{{url('/about')}}">About Us</a></li>
+                  <li class="dropdown">
+                    <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Featured Services <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{url('/service')}}">Services</a></li>
+                        <li><a href="{{url('/government')}}">Government</a></li>
+                        <li><a href="{{url('/largeestate')}}">Large Estate</a></li>
+                        <li><a href="{{url('/commercial')}}">Commercial</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="{{url('/contact')}}">Contact Us</a></li>
                 </ul>
               </div><!--/.navbar-collapse -->
             </div>

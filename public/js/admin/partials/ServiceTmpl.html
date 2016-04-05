@@ -1,0 +1,30 @@
+
+<div class="content">
+    <div class="title">Admin</div>
+    <div class="wrapper">
+        <div>
+            <label>Service Name</label>
+            <input type="text" ng-model="current_service.service_name">
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" ng-model="current_service.prices">
+        </div>
+        <div>
+            <label>Description</label>
+            <textarea ng-model="current_service.service_content"></textarea>
+        </div>
+        <div>
+            <button ng-click="clearService()">New</button>
+            <button ng-click="saveService()">Save</button>
+        </div>
+    </div>
+</div>
+<div class="list_wrapper">
+    <div class="title">Services</div>
+    <div class="list" ng-repeat="service in service_list">
+        <div class="item">
+            <a class="link" ng-click="getService(service.id)">{{ service.service_name}}</a>
+        </div>
+    </div>
+</div>
