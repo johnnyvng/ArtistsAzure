@@ -19,7 +19,7 @@
           </div>
           <div class="col-md-8">
             <div class="content-wrapper">
-                <h4 class="page-title"><b>Featured Service: MOWING, TRIMMING AND EDGING</b></h4>
+                <h4 class="page-title"><b>Featured Service:{{$service_name}}</b></h4>
                 <div id="containingDiv">
                   <div id="allinone_carousel_charming">
                     <div class="myloader"></div>
@@ -35,9 +35,8 @@
                     </div>
                   </div>  
                 </div>
-                <h3><b>{{$service_name}}</b></h3>
                 <br>
-                <p>{{$service_content}}</p>
+                <p>{!!$service_content!!}</p>
             </div><!--content wrapper-->
           </div>
         </div>

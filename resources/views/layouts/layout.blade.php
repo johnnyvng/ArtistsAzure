@@ -46,7 +46,7 @@ This is the master layout for pages include about, contact, home, services
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                   <li><a href="{{url('/')}}">Home</a></li>
-                  <li><a href="{{url('/about')}}">About Us</a></li>
+                  <li><a href="{{url('/about')}}">About</a></li>
                   <li class="dropdown">
                     <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Featured Services <span class="caret"></span></a>
                       <ul class="dropdown-menu">
@@ -56,7 +56,7 @@ This is the master layout for pages include about, contact, home, services
                         <li><a href="{{url('/commercial')}}">Commercial</a></li>
                       </ul>
                   </li>
-                  <li><a href="{{url('/contact')}}">Contact Us</a></li>
+                  <li><a href="{{url('/contact')}}">Contact</a></li>
                 </ul>
               </div><!--/.navbar-collapse -->
             </div>
@@ -65,37 +65,7 @@ This is the master layout for pages include about, contact, home, services
       </nav>
     </header>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-      <script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
-      <script src="js/allinone_carousel.js" type="text/javascript"></script>
-      <script src="js/vendor/bootstrap.min.js"></script>
-      <script>
-          jQuery(function() {
 
-            jQuery('#allinone_carousel_charming').allinone_carousel({
-              skin: 'charming',
-              width: 600,
-              height: 300,
-              responsive:true,
-              autoPlay: 5,
-              resizeImages:true,
-              autoHideBottomNav:true,
-              showElementTitle:false,
-              verticalAdjustment:50,
-              showPreviewThumbs:false,
-              //easing:'easeOutBounce',
-              numberOfVisibleItems:5,
-              nextPrevMarginTop:23,
-              playMovieMarginTop:0,
-              bottomNavMarginBottom:-10 
-            });            
-          });
-        </script>
-
-
-    <script src="js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
 @yield('content')
     <footer class="footer-wrapper" role="siteinfo">
           <div class="container">
@@ -123,7 +93,37 @@ This is the master layout for pages include about, contact, home, services
              </div>
           </div><!--container-->
     </footer>
-
-
   </body>
 </html>
+
+
+
+<script src="js/vendor/jquery-1.11.2.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="js/allinone_carousel.js" type="text/javascript"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script>
+    jQuery(function() {
+
+      jQuery('#allinone_carousel_charming').allinone_carousel({
+        skin: 'charming',
+        width: 600,
+        height: 300,
+        responsive:true,
+        autoPlay: 5,
+        resizeImages:true,
+        autoHideBottomNav:true,
+        showElementTitle:false,
+        verticalAdjustment:50,
+        showPreviewThumbs:false,
+        //easing:'easeOutBounce',
+        numberOfVisibleItems:5,
+        nextPrevMarginTop:23,
+        playMovieMarginTop:0,
+        bottomNavMarginBottom:-10 
+      });            
+    });
+</script>
