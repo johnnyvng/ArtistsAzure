@@ -15,6 +15,7 @@ This is the master layout for pages include about, contact, home, services
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-material-design.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link href="css/allinone_carousel.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/main.css">
