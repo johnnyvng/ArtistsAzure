@@ -12,9 +12,9 @@ class ServiceController extends Controller
     //
     public function service()
     {
-    	$servicePage = Service::where('service_name', 'BAD')->first();
+    	$service = Service::where('service_name', 'Mowing, Trimming, and Edging')->first();
 
-    	return view('service', $servicePage);
+    	return view('service', $service);
     }
 
     public function government()

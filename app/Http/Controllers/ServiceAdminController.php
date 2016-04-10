@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Service;
-use Log;
 
 class ServiceAdminController extends Controller
 {
@@ -18,8 +17,9 @@ class ServiceAdminController extends Controller
     public function index()
     {
         //
-        $servicePage = Service::orderBy('service_name')->get();
-        return response()->json($servicePage);
+        $services = Service::orderBy('service_name')->get();
+
+        return response()->json($services);
     }
 
     /**
@@ -41,9 +41,9 @@ class ServiceAdminController extends Controller
     public function store(Request $request)
     {
         //        
-        $serviceData = $request->all();
-        $servicePage = Service::create($serviceData);
-        return response()->json($servicePage);
+        $data = $request->all();
+        $service = Service::create($data);
+        return response()->json($service);
 
     }
 
@@ -81,11 +81,13 @@ class ServiceAdminController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $serviceData = $request->all();
-        unset($serviceData['id']);
+        $data = $request->all();
+        unset($data['id']);
+        unset($data['created_at']);
+        unset($data['updated_at']);
 
-        $servicePage = Service::where('service_name', $id)->update($serviceData);
-        return response()->json($servicePage);
+        $service = Service::where('id', $id)->update($data);
+        return response()->json($service);
 
     }
 
