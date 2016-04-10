@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddServicesIDImagesIDInGalleriesTable extends Migration
+class AddServiceIDGalleryIDInImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,17 @@ class AddServicesIDImagesIDInGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::table('galleries', function (Blueprint $table) {
+        Schema::table('images', function (Blueprint $table) {
             //
-            $table->foreign('servicesID')
+             $table->foreign('serviceID')
             ->references('id')
             ->on('services')
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
-            $table->foreign('imagesID')
+            $table->foreign('galleryID')
             ->references('id')
-            ->on('images')
+            ->on('galleries')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
@@ -35,12 +35,12 @@ class AddServicesIDImagesIDInGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('galleries', function (Blueprint $table) {
+        Schema::table('images', function (Blueprint $table) {
             //
-            $table->dropForeign('galleries_servicesID_foreign');
-            $table->dropForeign('galleries_imagesID_foreign');
-            $table->dropColumn('servicesID');
-            $table->dropColumn('imagesID');
+            $table->dropForeign('images_serviceID_foreign');
+            $table->dropForeign('images_galleryID_foreign');
+            $table->dropColumn('serviceID');
+            $table->dropColumn('galleryID');
         });
     }
 }

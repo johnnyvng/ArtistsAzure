@@ -1,3 +1,1 @@
-id,created_at,updated_at,servicesID,imagesID
-1,,,1,1
-2,,,1,1
+id,name,created_by,published,created_at,updated_at

@@ -1,3 +1,1 @@
-id,created_at,updated_at,image_name,image_title,image_description
-1,,,A,A,A
-2,,,B,B,B
+id,serviceID,galleryID,file_name,file_size,file_mime,file_path,created_by,created_at,updated_at
