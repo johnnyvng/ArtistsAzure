@@ -96,11 +96,6 @@ Route::get('/test', function(){
 });
 
 
-// Create the new Gallery and Images function
-Route::get('gallery/list', 'GalleryController@viewGalleryList');
-Route::post('gallery/save', 'GalleryController@saveGallery');
-Route::get('gallery/view/{id}', 'GalleryController@viewGalleryPics');
-Route::post('image/do-upload', 'GalleryController@doImageUpload');
 
 /*
 |--------------------------------------------------------------------------
@@ -124,4 +119,11 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/service', 'ServiceController@service');
     
+
+    // Create the new Gallery and Images function
+	Route::get('gallery/list', 'GalleryController@viewGalleryList');
+	Route::post('gallery/save', 'GalleryController@saveGallery');
+	Route::get('gallery/view/{id}', 'GalleryController@viewGalleryPics');
+	Route::post('image/do-upload', 'GalleryController@doImageUpload');
+
 });

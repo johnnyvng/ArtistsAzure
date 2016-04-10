@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -21,6 +23,15 @@ class GalleryController extends Controller
 
     public function saveGallery(Request $request)
     {
+        // Validate the Request through the validation rules
+        $validator = Validator::make($request->all(), [
+                'gallery_name' => 'required|min:6'
+            ]);
+
+        if ($validator->fails()) {
+            return redirect('gallery/list')->withErrors($validator)->withInput();
+        }
+
         $gallery = new Gallery;
 
         // Save a new Gallery
