@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests;
-use App\Service;
 
-class ServiceAdminController extends Controller
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Gallery;
+
+class GalleryAdminController extends Controller
 {
-     public function __construct()
+    
+    public function __construct()
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -21,10 +23,8 @@ class ServiceAdminController extends Controller
      */
     public function index()
     {
-        //
-        $services = Service::orderBy('service_name')->get();
-
-        return response()->json($services);
+        $galleries = Gallery::orderBy('name')->get();
+        return response()->json($galleries);
     }
 
     /**
@@ -45,11 +45,9 @@ class ServiceAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //        
         $data = $request->all();
-        $service = Service::create($data);
-        return response()->json($service);
-
+        $gallery = Gallery::create($data);
+        return response()->json($gallery);
     }
 
     /**
@@ -60,9 +58,8 @@ class ServiceAdminController extends Controller
      */
     public function show($id)
     {
-        //
-        $service = Service::find($id);
-        return response()->json($service);
+        $gallery = Gallery::find($id);
+        return response()->json($gallery);
     }
 
     /**
@@ -85,15 +82,13 @@ class ServiceAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $data = $request->all();
         unset($data['id']);
         unset($data['created_at']);
         unset($data['updated_at']);
 
-        $service = Service::where('id', $id)->update($data);
-        return response()->json($service);
-
+        $gallery = Gallery::where('id', $id)->update($data);
+        return response()->json($gallery);
     }
 
     /**

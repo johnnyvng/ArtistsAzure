@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Page;
+use Log;
 
 class PageController extends Controller
 {
@@ -25,5 +26,13 @@ class PageController extends Controller
 
     	return view('index', $page);
     }
+
+    // Edit the contact page
+/*    public function contact()
+    {       
+         $page = Page::where('page_label', 'contact')->first();
+         
+         return view('contact', $page);
+    }*/
 
 }

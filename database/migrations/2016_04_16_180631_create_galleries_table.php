@@ -12,13 +12,11 @@ class CreateGalleriesTable extends Migration
      */
     public function up()
     {
-         Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
+            //
             $table->increments('id');
-            // Adding a few more atttributes
-            $table->string('name');
-            $table->integer('created_by');
-            $table->boolean('published');
             $table->timestamps();
+            $table->string('name', 256);
         });
     }
 

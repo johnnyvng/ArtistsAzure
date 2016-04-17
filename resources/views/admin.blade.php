@@ -1,35 +1,21 @@
-<!DOCTYPE html>
-<html ng-app="adminApp">
-    <head>
-        <title>Laravel</title>
+@extends('layouts.app')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,400" rel="stylesheet" type="text/css">
+@section('content')
+
 
         <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                margin: 0 auto;
-                width: 960px;
-                padding: 20px;
-            }
-
             .content {
+                font-weight: 100;
+                margin: 0 auto;
+                width: 600px;
+                padding: 20px;
                 float: left;
             }
 
             .list_wrapper {
+                font-weight: 100;
                 width: 350px;
+                padding: 20px;
                 margin-left: 40px;
                 float: left;
             }
@@ -48,6 +34,13 @@
                 text-decoration: underline;
                 cursor: pointer;
             }
+            .image {
+                float: left;
+            }
+            .image img {
+                height: 150px;
+            }
+
             label {
                 display: block;
                 float: left;
@@ -55,20 +48,25 @@
                 font-weight: 400;
             }
             input[type="text"], textarea {
+                font-weight: 400;
                 width: 400px;
             }
             textarea {
+                font-weight: 400;
                 height: 300px;
             }
             button  {
+                font-weight: 400;
                 float: right;
             }
 
         </style>
-    </head>
-    <body>
-        <div class="container" ng-view>
+        <div ng-app="adminApp">
+            
+            <div class="container" ng-view>
 
+            </div>
+        
         </div>
 
         <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
@@ -77,10 +75,10 @@
         <script src="{{ URL::asset('js/admin/app.js') }}"></script>
         <script src="{{ URL::asset('js/admin/services/PageService.js') }}"></script>
         <script src="{{ URL::asset('js/admin/controllers/PageController.js') }}"></script>
+        <script src="{{ URL::asset('js/admin/services/GalleryService.js') }}"></script>
+        <script src="{{ URL::asset('js/admin/services/ImageService.js') }}"></script>
+        <script src="{{ URL::asset('js/admin/controllers/GalleryController.js') }}"></script>
         <script src="{{ URL::asset('js/admin/services/ServicePageService.js') }}"></script>
         <script src="{{ URL::asset('js/admin/controllers/ServiceController.js') }}"></script>
-        <script src="js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
-    </body>
-</html>
+
+@endsection

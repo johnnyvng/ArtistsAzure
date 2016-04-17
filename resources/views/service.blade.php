@@ -19,18 +19,17 @@
           </div>
           <div class="col-md-8">
             <div class="content-wrapper">
-                <h4 class="page-title"><b>Featured Service:{{$service_name}}</b></h4>
+                <h4 class="page-title"><b>Featured Service: {{$service_name}}</b></h4>
                 <div id="containingDiv">
                   <div id="allinone_carousel_charming">
                     <div class="myloader"></div>
                       <!-- CONTENT -->
-                      <ul class="allinone_carousel_list">
-                      
+                      <ul class="allinone_carousel_list">                      
                         <li><img src="img/charming/01_charming.jpg" alt="" /></li>
                           <li data-link="http://codecanyon.net/user/LambertGroup" data-target="_blank"><img src="img/charming/02_charming.jpg" alt="" /></li>
                           <li><img src="img/charming/03_charming.jpg" alt="" /></li>
                           <li><img src="img/charming/04_charming.jpg" alt="" /></li>
-                          <li><img src="img/charming/05_charming.jpg" alt="" /></li>                            
+                          <li><img src="img/charming/05_charming.jpg" alt="" /></li>
                       </ul>                                                           
                     </div>
                   </div>  

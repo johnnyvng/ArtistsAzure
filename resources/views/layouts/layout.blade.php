@@ -1,6 +1,3 @@
-<!-- 
-This is the master layout for pages include about, contact, home, services 
- -->
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -15,12 +12,14 @@ This is the master layout for pages include about, contact, home, services
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-material-design.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link href='css/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+        <link href='css/demo.css' rel='stylesheet' type='text/css'>
         <link href="css/allinone_carousel.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
+    
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -57,6 +56,7 @@ This is the master layout for pages include about, contact, home, services
                         <li><a href="{{url('/commercial')}}">Commercial</a></li>
                       </ul>
                   </li>
+                  <li><a href="{{url('/gallery')}}">Gallery</a></li>
                   <li><a href="{{url('/contact')}}">Contact</a></li>
                 </ul>
               </div><!--/.navbar-collapse -->
@@ -66,6 +66,8 @@ This is the master layout for pages include about, contact, home, services
       </nav>
     </header>
     <!-- Main jumbotron for a primary marketing message or call to action -->
+  </body>
+
 
 @yield('content')
     <footer class="footer-wrapper" role="siteinfo">
@@ -94,37 +96,82 @@ This is the master layout for pages include about, contact, home, services
              </div>
           </div><!--container-->
     </footer>
-  </body>
-</html>
-
 
 
 <script src="js/vendor/jquery-1.11.2.min.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
 <script src="js/allinone_carousel.js" type="text/javascript"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script>
-    jQuery(function() {
-
-      jQuery('#allinone_carousel_charming').allinone_carousel({
-        skin: 'charming',
-        width: 600,
-        height: 300,
-        responsive:true,
-        autoPlay: 5,
-        resizeImages:true,
-        autoHideBottomNav:true,
-        showElementTitle:false,
-        verticalAdjustment:50,
-        showPreviewThumbs:false,
-        //easing:'easeOutBounce',
-        numberOfVisibleItems:5,
-        nextPrevMarginTop:23,
-        playMovieMarginTop:0,
-        bottomNavMarginBottom:-10 
-      });            
-    });
+jQuery(function() {
+  jQuery('#allinone_carousel_charming').allinone_carousel({
+    skin: 'charming',
+    width: 600,
+    height: 300,
+    responsive:true,
+    autoPlay: 5,
+    resizeImages:true,
+    autoHideBottomNav:true,
+    showElementTitle:false,
+    verticalAdjustment:50,
+    showPreviewThumbs:false,
+    //easing:'easeOutBounce',
+    numberOfVisibleItems:5,
+    nextPrevMarginTop:23,
+    playMovieMarginTop:0,
+    bottomNavMarginBottom:-10 
+  });  
+});
 </script>
+<script src="js/main.js"></script>
+<script src="js/vendor/jquery-1.11.2.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/simple-lightbox.min.js"></script>
+<script>
+  $(function(){
+    var $gallery = $('.gallery a').simpleLightbox();
+    
+    $gallery.on('show.simplelightbox', function(){
+      console.log('Requested for showing');
+    })
+    .on('shown.simplelightbox', function(){
+      console.log('Shown');
+    })
+    .on('close.simplelightbox', function(){
+      console.log('Requested for closing');
+    })
+    .on('closed.simplelightbox', function(){
+      console.log('Closed');
+    })
+    .on('change.simplelightbox', function(){
+      console.log('Requested for change');
+    })
+    .on('next.simplelightbox', function(){
+      console.log('Requested for next');
+    })
+    .on('prev.simplelightbox', function(){
+      console.log('Requested for prev');
+    })
+    .on('nextImageLoaded.simplelightbox', function(){
+      console.log('Next image loaded');
+    })
+    .on('prevImageLoaded.simplelightbox', function(){
+      console.log('Prev image loaded');
+    })
+    .on('changed.simplelightbox', function(){
+      console.log('Image changed');
+    })
+    .on('nextDone.simplelightbox', function(){
+      console.log('Image changed to next');
+    })
+    .on('prevDone.simplelightbox', function(){
+      console.log('Image changed to prev');
+    })
+    .on('error.simplelightbox', function(e){
+      console.log('No image found, go to the next/prev');
+      console.log(e);
+    });
+  });
+</script>
+</html>

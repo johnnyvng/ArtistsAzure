@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Service;
+
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Service;
 use Log;
 
 class ServiceController extends Controller
