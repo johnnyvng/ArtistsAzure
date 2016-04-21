@@ -53,6 +53,7 @@ Route::get('/commercial', 'ServiceController@commercial');
 Route::get('/gallery/{id?}', 'GalleryController@index');
 // Contact page
 Route::get('/contact', 'ContactController@contact');
+Route::post('/contact', 'ContactController@save_contact_form');
 
 // Extra route for tempo page
 Route::get('/test', function(){
@@ -82,16 +83,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/admin','AdminController@index');
 	Route::resource('ajax/page', 'PageAdminController');
     Route::resource('ajax/service', 'ServiceAdminController');
+    Route::resource('ajax/request', 'RequestAdminController');
     Route::resource('ajax/gallery', 'GalleryAdminController');
-    Route::resource('ajax/image', 'ImageAdminController');
-    
-    
+	Route::resource('ajax/image', 'ImageAdminController');
+	Route::resource('ajax/submission','SubmissionAdminController');
 
-    // Create the new Gallery and Images function (extra)
-	/*Route::get('gallery/list', 'GalleryController@viewGalleryList');
-	Route::post('gallery/save', 'GalleryController@saveGallery');
-	Route::get('gallery/view/{id}', 'GalleryController@viewGalleryPics');
-	Route::post('image/do-upload', 'GalleryController@doImageUpload');
-	*/
+	
 
 });

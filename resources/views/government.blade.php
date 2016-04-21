@@ -23,6 +23,7 @@
             <div class="content-wrapper">
                 <h4 class="page-title"><b>Featured Service: MOWING, TRIMMING AND EDGING</b></h4>
                 <div class="service-wrapper">
+                    
                     <div class="row">
                        <div class="col-md-4">
                           <div class="service-single">
@@ -45,7 +46,20 @@
                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                           </div>
                        </div>
+                       
+                              @foreach ($services as $i) 
+                        <div class="col-md-4">
+                          <div class="service-single">
+                             <img src="img/trimming.jpg" class="img-responsive" alt="">
+                             <h3>{{ $i->service_name }}</h3>
+                             <p>{!!$i->service_content!!}</p>
+                        </div>
+                          
+                       </div>
+                       @endforeach
                     </div>
+                     
+
                 </div>
                 <div id="containingDiv">
                   <div id="allinone_carousel_charming">

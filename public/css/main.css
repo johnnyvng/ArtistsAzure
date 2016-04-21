@@ -9,7 +9,7 @@ body {
   overflow-x: hidden; }
 
 .container {
-  max-width: 960px; }
+  max-width: 1200px; }
 
 a {
   text-decoration: none; }
@@ -24,6 +24,9 @@ h1 {
 
 p {
   font-size: 14px; }
+li{
+  list-style: none;
+}
 
 /*
 ===================

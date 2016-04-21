@@ -82,6 +82,9 @@
 
         <script src="{{ URL::asset('js/admin/controllers/ServiceController.js') }}"></script>
         <script src="{{ URL::asset('js/admin/services/ServicePageService.js') }}"></script>
+        
+        <script src="{{ URL::asset('js/admin/controllers/SubmissionController.js') }}"></script>
+        <script src="{{ URL::asset('js/admin/services/SubmissionService.js') }}"></script>
 
 
 @endsection

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Page;
-use Log;
+use App\Http\Request;
+use App\Submission;
+use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
@@ -26,13 +24,26 @@ class PageController extends Controller
 
     	return view('index', $page);
     }
+    public function contact()
+    {
+      $page = Page::where('page_label', 'home')->first();
 
-    // Edit the contact page
-/*    public function contact()
-    {       
-         $page = Page::where('page_label', 'contact')->first();
-         
-         return view('contact', $page);
-    }*/
+      return view('/contact', array('headline' =>'', 'body'=>''));
+    }
+    public function save_contact_form(Request $request)
+    {
+      /**Show the contact form page.
+      *
+      *
+      */
+         Log::debug($request->all());
+
+         $data = $request->all();
+         $success = Submission::create($data);
+
+
+         $page = Page::where('page_label', 'thanks')->first();
+          return view('/page', array('headline' =>'', 'body'=>''));
+     }
 
 }

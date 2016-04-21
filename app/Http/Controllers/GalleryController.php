@@ -8,8 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Gallery;
 use App\Image;
-use Lop;
-
+use Log;
 
 class GalleryController extends Controller
 {

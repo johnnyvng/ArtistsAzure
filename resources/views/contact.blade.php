@@ -31,7 +31,7 @@
                    <div class="col-md-8 pdl pdr">
                       <div class="contact-form">
                          <p><b>Tell us your need, we can help!</b></p></br>
-                         <form class="form-horizontal">
+                         <form class="form-horizontal" method = "post">
                           <div class="form-group">
                             <label for="firstname" class="col-sm-4 control-label">First Name:</label>
                             <div class="col-sm-7">
@@ -60,6 +60,12 @@
                             <label for="inputEmail3" class="col-sm-4 control-label">Comments:</label>
                             <div class="col-sm-8">
                               <textarea class="form-control" rows="5"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-8">
+                              <input type="file" name="datafile" size="40">
                             </div>
                           </div>
                          

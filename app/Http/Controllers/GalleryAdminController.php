@@ -10,7 +10,7 @@ use App\Gallery;
 
 class GalleryAdminController extends Controller
 {
-    
+    //
     public function __construct()
     {
         $this->middleware('auth');

@@ -1,0 +1,248 @@
+
+<div class="content">
+    
+    <div class="wrapper">
+    <div class="admin-wrapper">
+        <nav class="adminmenu-wrapper" role="navigation">
+          <ul class="adminmenu">
+            <li><a href=""><span class="glyphicon glyphicon-dashboard"></span>Dashboard</a></li>
+            <!-- <li><a data-toggle="collapse" href="#postcollapse" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pushpin"></span>Post</a>
+              <div class="collapse" id="postcollapse">
+                <ul class="submenu">
+                  <li><a href="">Edit</a></li>
+                  <li><a href="">Add New</a></li>
+                  <li><a href="">Post Tags</a></li>
+                  <li><a href="">Categories</a></li>
+                </ul>
+              </div>   
+            </li> -->
+            <!-- <li>
+              <a data-toggle="collapse" href="#monthly-collapse" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-calendar"></span>Monthly Special</a>
+              <div class="collapse" id="monthly-collapse">
+                <ul class="submenu">
+                  <li><a href="">Edit</a></li>
+                  <li><a href="">Media</a></li>
+                  <li><a href="">Links</a></li>
+                </ul>
+              </div>
+            </li> -->
+            <li>
+              <a data-toggle="collapse" href="#page-collapse" aria-expanded="true" aria-controls="collapseExample"><span class="glyphicon glyphicon-file"></span>Pages</a>
+              <div class="collapse in" id="page-collapse">
+                <ul class="submenu">
+                  <li><a href=""  class="current" ng-click="saveService()">Edit</a></li>
+                  <li><a href="" ng-click="clearService()">Add New</a></li>
+                </ul>
+              </div>
+            </li>
+            <!-- <li><a href=""><i class="fa fa-comments"></i>Comments</a></li>
+            <li><a href=""><i class="fa fa-paint-brush"></i>Appearance</a></li>
+            <li><a href=""><i class="fa fa-cogs"></i>Plugins</a></li>
+            <li><a href=""><i class="fa fa-user"></i>Users</a></li>
+            <li><a href=""><i class="fa fa-wrench"></i>Tools</a></li>
+            <li><a href=""><i class="fa fa-sliders"></i>Settings</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Header</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Flutter</a></li>  -->
+          </ul>  
+        </nav>
+        <div id="admin-content">
+            <div id="wrap">
+                <h1>Edit Page</h1> 
+                <form action="" method="post">
+                  <div class="col-md-9 pdl">
+                    <div class="entry-content">
+                      <div class="entry-title">
+                        <input type="text" class="form-control" id="page-title" placeholder="Enter page title" type="text" ng-model="current_service.service_name"> 
+                      </div><!--entry title-->
+                      <div>
+                      <h1>Edit Price</h1> 
+                      <input type="text" class="form-control" placeholder="Enter page title" type="text" ng-model="current_service.prices"> 
+                      </div><!--entry title-->
+
+                      <div class="content-editor">
+                          <div class="editor-controls">
+                             <a href="">Upload / Insert</a>
+                          </div>
+                          <div class="editor-toolbar">
+                            <div class="editor-body">
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <i class="fa fa-bold"></i></button>
+                              </div> 
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <i class="fa fa-italic"></i></button>
+                              </div> 
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <i class="fa fa-underline"></i></button>
+                              </div> 
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <i class="fa fa-align-left"></i></button>
+                              </div>
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <i class="fa fa-align-center"></i></button>
+                              </div> 
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <i class="fa fa-align-right"></i></button>
+                              </div>
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <select id="font-family">
+                                   <option>Font</option>
+                                   <option>Times New Roman</option>
+                                   <option>Helvetica</option>
+                                   <option>Open Sans</option>
+                                   <option>Sans serif</option>
+                                   <option>Arial</option>
+                                   <option>Nueue</option>
+                                </select>
+                              </div>
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <span class="text-strike">ABC</span></button>
+                              </div>
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <i class="fa fa-mail-forward"></i></button>
+                              </div>
+                              <div class="editor-btn" role="button" area-label="Bold">
+                                <button role="presentation" type="button" tabindex="-1">
+                                  <i class="fa fa-mail-reply"></i></button>
+                              </div>
+                            </div>
+                          </div><!--editor toolbar-->
+                          <textarea class="form-control" rows="15" ng-model="current_service.service_content"></textarea>
+                      </div><!--content editor-->
+
+                      <div class="post-box">
+                          <h3>Custom Fields</h3>
+                          <div class="entry-content">
+                              <table id="list-table" style="">
+                                <thead>
+                                  <tr>
+                                    <th class="left">Name</th>
+                                    <th>Value</th>
+                                  </tr>
+                                </thead>
+                              </table>
+                             <!--  <p><strong>Add New Custom Field:</strong></p>
+
+                              <table id="newmeta">
+                                <thead>
+                                  <tr>
+                                    <th class="left"><label for="metakeyselect">Name</label></th>
+                                    <th><label for="metavalue">Value</label></th>
+                                  </tr>
+                                </thead> -->
+
+                                <!-- <tbody>
+                                <tr>
+                                  <td id="newmetaleft" class="left">
+                                  <select id="metakeyselect" name="metakeyselect">
+                                    <option value="#NONE#">— Select —</option
+                                    <option value="position">position</option>
+                                    <option value="rule">rule</option>
+                                  </select>
+                                  <a href=""><span id="enternew">Enter new</span></a>
+                                  <span id="cancelnew" class="hidden">Cancel</span></a>
+                                  </td>
+                                  <td><textarea id="metavalue" name="metavalue" rows="5"></textarea></td>
+                                  </tr>
+
+                                  <tr><td colspan="2">
+                                  <div class="submit">
+                                    <input type="submit" id="newmeta-submit" class="btn btn-default" value="Add Custom Field"></div></td></tr>
+                                  </tbody> -->
+                              </table>
+                          </div>  
+                      </div>
+                    </div><!--entry content-->
+                  </div><!--col 8-->
+
+
+                  <div class="col-md-3">
+                    <aside class="entry-right">
+                        <div id="postbox-container1" class="post-box">
+                          <h3>Published Services</h3>
+                          <div class="entry-content">
+                            <div class="list_wrapper">
+                                <div class="list" ng-repeat="service in service_list">
+                                    <div class="item">
+                                        <a class="link" ng-click="getService(service.id)">{{ service.service_name}}</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                              <!-- <a href="" class="btn btn-default pull-right">Preview changes</a>
+                              <div class="clearfix"></div>
+                               <div class="pub-section">
+                                  <label>Status:</label>
+                                  <span class="post-status">
+                                    Published 
+                                  </span>
+                                  <a href="">Edit</a>
+                               </div> -->
+                               <!-- <div class="pub-section">
+                                  <label>Visiblity:</label>
+                                  <span class="post-status">
+                                    Public 
+                                  </span>
+                                  <a href="">Edit</a>
+                               </div>  -->
+                          </div>
+
+                              <!-- <div class="publish-action">
+                                <a href="" class="submitdelete">Move to trash</a>
+                                <input type="submit" name="publish" id="publish" class="btn btn-info btn-small pull-right" value="Publish">
+                              </div> -->
+                        </div>
+
+                       <!--  <div class="post-box">
+                          <h3>Attribute</h3>
+                          <div class="entry-content">
+                             <p><strong>Parent</strong></p>
+                             <select>
+                               <option>No Parent</option>
+                               <option>Parent one</option>
+                               <option>Parent two</option>
+                             </select>
+                              <p><strong>Template</strong></p>
+                               <select>
+                                 <option>Homepage template</option>
+                                 <option>Template one</option>
+                                 <option>Template two</option>
+                               </select>
+                              <p><strong>Order</strong></p>
+                               <select>
+                                 <option>Alphabetically</option>
+                               </select>
+                               <p></p>
+                          </div>
+                        </div>  -->   
+                    </aside><!--entry right-->
+                  </div>
+                </form>
+            </div>
+        </div><!--admin content-->
+      </div>  <!--admin wrapper-->
+        <!-- <div>
+            <label>Headline</label>
+            <input e>
+        </div>
+        <div>
+            <label>Page Label</label>
+            <input type="text" ng-model="current_page.page_label">
+        </div>
+        <div>
+            <label>Body</label>
+            <textarea ng-model="current_page.body"></textarea>
+        </div>
+        <div>
+            <button ng-click="clearPage()">New</button>
+            <button ng-click="savePage()">Save</button>
+        </div>
+
+ -->

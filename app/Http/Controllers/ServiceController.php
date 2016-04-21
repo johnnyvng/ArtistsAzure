@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Service;
+use App\Http\Requests;
 use Log;
 
 class ServiceController extends Controller
@@ -14,23 +12,25 @@ class ServiceController extends Controller
     //
     public function service()
     {
-    	$service = Service::where('service_name', 'Mowing, Trimming, and Edging')->first();
+        $service = Service::where('service_name','Landscaping and Design')->first();
 
-    	return view('service', $service);
+        return view('service', $service);
     }
 
     public function government()
     {
-    	return view('government');
+        $governmentService = Service::get();
+    	return view('government', ['services' => $governmentService]);
     }
  
     public function largeestate()
     {
-    	return view('largeestate');
+        $largeestateService = Service::get();
+        return view('largeestate', ['services' => $largeestateService]);
     }
     public function commercial()
     {
-    	return view('commercial');
+        $commercialService = Service::get();
+        return view('commercial', ['services' => $commercialService]);
     }
-    
 }

@@ -1,0 +1,21 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class ServicesImagesSeeder extends DatabaseSeeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+          $seedDataFromImages = $this->seedFromCSV(app_path().'/../database/csv/imagesservices.csv');
+
+        foreach ($seedDataFromImages as $row) 
+        {
+        	DB::table('services_images')->insert($row);
+        }
+    }
+}
