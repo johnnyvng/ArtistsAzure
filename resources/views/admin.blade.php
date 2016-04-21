@@ -75,10 +75,13 @@
         <script src="{{ URL::asset('js/admin/app.js') }}"></script>
         <script src="{{ URL::asset('js/admin/services/PageService.js') }}"></script>
         <script src="{{ URL::asset('js/admin/controllers/PageController.js') }}"></script>
-        <script src="{{ URL::asset('js/admin/services/GalleryService.js') }}"></script>
-        <script src="{{ URL::asset('js/admin/services/ImageService.js') }}"></script>
+
+        <script src="{{ URL::asset('js/admin/services/GalleryService.js') }}"></script>        
         <script src="{{ URL::asset('js/admin/controllers/GalleryController.js') }}"></script>
-        <script src="{{ URL::asset('js/admin/services/ServicePageService.js') }}"></script>
+        <script src="{{ URL::asset('js/admin/services/ImageService.js') }}"></script>
+
         <script src="{{ URL::asset('js/admin/controllers/ServiceController.js') }}"></script>
+        <script src="{{ URL::asset('js/admin/services/ServicePageService.js') }}"></script>
+
 
 @endsection
