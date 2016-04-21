@@ -31,11 +31,11 @@
                    <div class="col-md-8 pdl pdr">
                       <div class="contact-form">
                          <p><b>Tell us your need, we can help!</b></p></br>
-                         <form class="form-horizontal" method = "post">
+                         <form class="form-horizontal" method = "post" action = "/contact">
                           <div class="form-group">
                             <label for="firstname" class="col-sm-4 control-label">First Name:</label>
                             <div class="col-sm-7">
-                              <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                              <input type="text" name ="name" class="form-control" id="firstname" placeholder="First Name">
                             </div>
                           </div>
                           <div class="form-group">
@@ -53,7 +53,7 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Email:</label>
                             <div class="col-sm-7">
-                              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                              <input type="email" name = "email" class="form-control" id="inputEmail3" placeholder="Email">
                             </div>
                           </div>
                           <div class="form-group">
@@ -65,7 +65,7 @@
                           <div class="form-group">
                             <div class="col-sm-4"></div>
                             <div class="col-sm-8">
-                              <input type="file" name="datafile" size="40">
+                              <input type="file" name="comment" size="40">
                             </div>
                           </div>
                          

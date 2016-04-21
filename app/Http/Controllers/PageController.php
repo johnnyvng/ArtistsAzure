@@ -2,27 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Page;
-use App\Http\Request;
+use App\Http\Requests;
 use App\Submission;
 use App\Http\Controllers\Controller;
+use Log;
 
 class PageController extends Controller
 {
-	// edit the about page
-    public function about()	
+  // edit the about page
+    public function about() 
     {
-    	$page = Page::where('page_label', 'about')->first();
+      $page = Page::where('page_label', 'about')->first();
     
-    	return view('about', $page);
+      return view('about', $page);
     }
 
     // edit the home page
     public function index()
     {
-    	$page = Page::where('page_label', 'home')->first();
+      $page = Page::where('page_label', 'home')->first();
 
-    	return view('index', $page);
+      return view('index', $page);
     }
     public function contact()
     {
@@ -42,8 +44,9 @@ class PageController extends Controller
          $success = Submission::create($data);
 
 
-         $page = Page::where('page_label', 'thanks')->first();
-          return view('/page', array('headline' =>'', 'body'=>''));
+         /*$page = Page::where('page_label', 'thanks')->first();
+          return view('/page', array('headline' =>'', 'body'=>''));*/
+          return view('/contact');
      }
 
 }

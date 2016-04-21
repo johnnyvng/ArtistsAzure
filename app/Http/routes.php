@@ -53,7 +53,7 @@ Route::get('/commercial', 'ServiceController@commercial');
 Route::get('/gallery/{id?}', 'GalleryController@index');
 // Contact page
 Route::get('/contact', 'ContactController@contact');
-Route::post('/contact', 'ContactController@save_contact_form');
+Route::post('/contact/{id?}', 'PageController@save_contact_form');
 
 // Extra route for tempo page
 Route::get('/test', function(){
