@@ -4,6 +4,34 @@ app.controller('GalleryController', function ($scope, $routeParams, Gallery, Ima
 	$scope.current_gallery = null;		// Variable for the page shown in the form
 	$scope.current_image_list = [];		// Variable for the current Image list
 
+	/*Variables*/
+    angular.extend($scope, {
+            // newGallery: {},
+            // errorDiv: false,
+            // errorMessages: [],
+            // singleGallery: {},
+            dropzoneConfig: {
+                'options': {
+                	'url': 'upload-image.php'
+                    // 'url': baseUrl + 'upload-image'
+                },
+                'eventHandlers': {
+                    'sending': function(file, xhr, formData) {
+                    	console.log('sending');
+                        // formData.append('_token', csrfToken);
+                        // formData.append('galleryId', $routeParams.id);
+                    },
+                    'success': function(file, response) {
+                    	console.log('success');
+                        // console.log(response);
+                        // $scope.singleGallery.images.push(response);
+                        // console.log($scope.singleGallery);
+                        // $scope.$emit('imageAdded', $scope.singleGallery);
+                    }
+                }
+            }
+        });	
+
 	// At startup, check to see if a specific page was requested
 	function init() {
 		if ($routeParams.id) {
@@ -91,3 +119,5 @@ app.controller('GalleryController', function ($scope, $routeParams, Gallery, Ima
        }
     };
  }]);
+
+

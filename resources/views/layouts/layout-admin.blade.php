@@ -184,7 +184,7 @@
       </div>  <!--admin wrapper-->
 
     @yield('content')
-    
+        
 
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/angular.js') }}"></script>
