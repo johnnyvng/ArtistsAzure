@@ -4,9 +4,10 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
+    <title>@yield('title')</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>@yield('title')</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -14,15 +15,9 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        
-
+        <link rel="stylesheet" href="css/main.css">      
+        <link rel="stylesheet" type="text/css" href="js/admin/dropzone/dist/basic.css">
+        <link rel="stylesheet" type="text/css" href="js/admin/dropzone/dist/dropzone.css">
         <!-- Fonts -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
@@ -144,10 +139,35 @@
       </div>  <!--admin wrapper-->
 
     @yield('content')
-   
+    
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/angular.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/angular-route.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/admin/app.js') }}"></script>
+    
+    <!-- Adding page controller and service -->
+    <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/PageController.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/admin/services/PageService.js') }}"></script>
+    <!-- Adding service controller and service -->
+    <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/ServiceController.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/admin/services/ServicePageService.js') }}"></script>
+    <!-- Adding gallery controller and service -->
+    <script type="text/javascript" src="{{ URL::asset('js/admin/services/GalleryService.js') }}"></script>        
+    <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/GalleryController.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/admin/services/ImageService.js') }}"></script>
+    <!-- Adding dropzone script to enhance gallery -->
+    <script type="text/javascript" src="{{ URL::asset('js/admin/dropzone/dist/dropzone.js') }}"></script>
+    <!-- Adding submission controller and service -->
+    <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/SubmissionController.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/admin/services/SubmissionService.js') }}"></script>
+    
+    <script type="text/javascript" src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>  
+    <script type="text/javascript" src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
 
 
     </body>
