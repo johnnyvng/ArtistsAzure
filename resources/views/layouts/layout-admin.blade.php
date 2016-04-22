@@ -4,7 +4,6 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
-    <title>@yield('title')</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,10 +33,56 @@
             .fa-btn {
                 margin-right: 6px;
             }
+            .button1 {
+               border-top: 1px solid #96d1f8;
+               background: #65a9d7;
+               background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+               background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+               background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+               background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+               background: -o-linear-gradient(top, #3e779d, #65a9d7);
+               padding: 10px 20px;
+               -webkit-border-radius: 7px;
+               -moz-border-radius: 7px;
+               border-radius: 7px;
+               -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+               -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+               box-shadow: rgba(0,0,0,1) 0 1px 0;
+               text-shadow: rgba(0,0,0,.4) 0 1px 0;
+               color: white;
+               font-size: 24px;
+               font-family: Georgia, serif;
+               text-decoration: none;
+               vertical-align: middle;
+               }
+            .button1:hover {
+               border-top-color: #28597a;
+               background: #28597a;
+               color: #ccc;
+               }
+            .button1:active {
+               border-top-color: #d1edff;
+               background: #d1edff;
+               }
+            .title {
+                font-size: 36px;
+            }
+            .link {
+                font-weight: 400;
+            }
+            .link:hover {
+                color: blue;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .image {
+                float: left;
+            }
+            .image img {
+                height: 150px;
+            }
         </style>
     </head>
-
-    <title>@yield('content')</title>
 
 <body id="app-layout">
     <div class="content">   
