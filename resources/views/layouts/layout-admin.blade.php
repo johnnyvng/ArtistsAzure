@@ -41,7 +41,7 @@
                background: -moz-linear-gradient(top, #3e779d, #65a9d7);
                background: -ms-linear-gradient(top, #3e779d, #65a9d7);
                background: -o-linear-gradient(top, #3e779d, #65a9d7);
-               padding: 10px 20px;
+               padding: 5px 10px;
                -webkit-border-radius: 7px;
                -moz-border-radius: 7px;
                border-radius: 7px;
