@@ -1,5 +1,48 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
-<div class="content">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gallery</title>
+        
+
+        <!-- Fonts -->
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'> -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'> -->
+
+        <!-- Styles -->
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+        <style>
+            body {
+                font-family: 'Lato';
+            }
+
+            .fa-btn {
+                margin-right: 6px;
+            }
+        </style>
+    </head>
+
+<body id="app-layout">
+<!-- <div class="content">
     <div class="title">Admin</div>
     <div class="wrapper">
         <div>
@@ -44,3 +87,122 @@
         </div>
     </div>
 </div>
+ -->
+
+<div class="content">  
+    <div class="wrapper">
+    <div class="admin-wrapper">
+        <nav class="adminmenu-wrapper" role="navigation">
+          <ul class="adminmenu">
+            <li><a href="/gallery"><i class="fa fa-paint-brush"></i>Gallery Page</a></li>
+            <div class="container">
+                <div class="list">
+                    <div class="item" ng-repeat="gallery in gallery_list">
+                        <a class="link" ng-click="getGallery(gallery.id)">{{ gallery.name }}</a>
+                    </div>
+                </div>
+            </div> 
+            <!-- <li><a data-toggle="collapse" href="#postcollapse" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pushpin"></span>Post</a>
+              <div class="collapse" id="postcollapse">
+                <ul class="submenu">
+                  <li><a href="">Edit</a></li>
+                  <li><a href="">Add New</a></li>
+                  <li><a href="">Post Tags</a></li>
+                  <li><a href="">Categories</a></li>
+                </ul>
+              </div>   
+            </li> -->
+            <!-- <li>
+              <a data-toggle="collapse" href="#monthly-collapse" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-calendar"></span>Monthly Special</a>
+              <div class="collapse" id="monthly-collapse">
+                <ul class="submenu">
+                  <li><a href="">Edit</a></li>
+                  <li><a href="">Media</a></li>
+                  <li><a href="">Links</a></li>
+                </ul>
+              </div>
+            </li> -->
+            <li>              
+                <ul class="submenu">
+                  <!-- 
+                  // Replace 2 buttons of services with buttons of Gallery
+                  <li><a href=""  class="current" ng-click="saveService()">Save</a></li>
+                  <li><a href="" ng-click="clearService()">Add New</a></li> -->
+                  <div style="clear: both;">
+                      <button ng-click="clearGallery()">Clear</button>
+                      <button ng-click="saveGallery()">Save</button>
+                  </div>
+                </ul>              
+            </li>
+            <!-- <li><a href=""><i class="fa fa-comments"></i>Comments</a></li>
+            <li><a href=""><i class="fa fa-paint-brush"></i>Appearance</a></li>
+            <li><a href=""><i class="fa fa-cogs"></i>Plugins</a></li>
+            <li><a href=""><i class="fa fa-user"></i>Users</a></li>
+            <li><a href=""><i class="fa fa-wrench"></i>Tools</a></li>
+            <li><a href=""><i class="fa fa-sliders"></i>Settings</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Header</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Flutter</a></li>  -->
+          </ul>  
+        </nav>
+
+
+       <div id="admin-content">
+            <div id="wrap">
+                <h1>Gallery Collection</h1> 
+                <div class="col-md-9 pdl">
+                    <div class="entry-content">
+                      <div class="entry-title">
+                          <input type="text" class="form-control" placeholder="Enter gallery name" ng-model="current_gallery.name">
+                      </div><!--entry title-->
+                    </div>
+                </div>
+        <div class="container">
+            <div class="content">
+                <div id="wrap">
+                     
+                </div>
+                <div class="wrapper">
+                    <div class="content-editor">
+                        <div class="editor-controls">                          
+
+                        </div>
+                    <div style="clear: both;">
+                        <label>Images</label>
+                         <div style="clear: both;"></div>
+                        <div class="images">
+                            <div class="image" ng-repeat="image in current_image_list">
+                                <img src="/galleries/{{ image.filename }}">
+                                <br>
+                                {{ image.name }} ({{ image.filename }})
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear: both;">
+                        <label>Add New</label>
+                        <div class="images">                              
+                            <p ng-show="current_gallery.id"> 
+                                <input type = "file" file-model = "myFile"/>
+                                <button ng-click = "uploadImage()">Upload Image</button>
+                            </p>
+                            <p ng-hide="current_gallery.id">Select or Create a new Gallery</p>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>    
+
+            
+      </div><!--admin content-->
+
+
+
+    </div><!--admin wrapper-->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+
+
+    </body>
+ </html>

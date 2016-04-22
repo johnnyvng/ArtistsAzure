@@ -35,7 +35,7 @@
                   </div>  
                 </div>
                 <br>
-                <p>{!!$service_content!!}</p>
+                <p>{!!$description!!}</p>
             </div><!--content wrapper-->
           </div>
         </div>

@@ -83,7 +83,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/admin','AdminController@index');
 	Route::resource('ajax/page', 'PageAdminController');
     Route::resource('ajax/service', 'ServiceAdminController');
-    Route::resource('ajax/request', 'RequestAdminController');
     Route::resource('ajax/gallery', 'GalleryAdminController');
 	Route::resource('ajax/image', 'ImageAdminController');
 	Route::resource('ajax/submission','SubmissionAdminController');

@@ -16,7 +16,7 @@ app.config(['$routeProvider',function($routeProvider) {
 		})*/
 		.when('/galleries/:id?', {
 			controller: 'GalleryController',
-			templateUrl: '/js/admin/partials/galleryTmplDR.html'
+			templateUrl: '/js/admin/partials/galleryTmpl.html'
 		})
 		.when('/submissions/:id?', {
 			controller: 'SubmissionController',
