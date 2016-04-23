@@ -26,19 +26,19 @@ app.config(['$routeProvider',function($routeProvider) {
 
 		// DropzoneJS
 	$routeProvider
-		.when('/gallery/view', {
+		.when('/galleryS3/view', {
             templateUrl: 'js/admin/partials/gallery/gallery-view.html',
             controller: 'GalleryS3Controller',
             // resolve: {
-            //     data: function(galleryModel) {
+            //     data: function(GalleryS3Service) {
             //         return {
-            //             galleries: galleryModel.getAllGalleries()
+            //             galleries: GalleryS3Service.getAllGalleries()
             //         };
             //     }
             // },
             // authenticated: true
         })
-        .when('/gallery/add', {
+        .when('/galleryS3/add', {
             templateUrl: 'js/admin/partials/gallery/gallery-add.html',
             controller: 'GalleryS3Controller',
             // resolve: {

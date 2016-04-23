@@ -1,6 +1,6 @@
 app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service', '$timeout', '$routeParams',
 
-    function($scope, $location, galleryModel, $timeout, $routeParams, Lightbox, data) {
+    function($scope, $location, GalleryS3Service, $timeout, $routeParams, Lightbox, data) {
 
         /*Getting all the galleries*/
         if (data && data.galleries != undefined) {
@@ -56,8 +56,8 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
                 console.log(addGalleryForm);
                 if (addGalleryForm.$valid) {
                     $scope.formSubmitted = false;
-                    galleryModel.saveGallery($scope.newGallery).success(function(response) {
-                        $location.path('/gallery/view');
+                    GalleryS3Service.saveGallery($scope.newGallery).success(function(response) {
+                        $location.path('/galleryS3/view');
                     });
                 } else {
                     $scope.formSubmitted = true;
@@ -65,7 +65,7 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
                 }
             },
             viewGallery: function(id) {
-                $location.path('/gallery/' + id);
+                $location.path('/galleryS3/' + id);
             },
             openLightboxModal: function(index) {
                 Lightbox.openModal($scope.singleGallery.images, index);
@@ -75,7 +75,7 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
                     imageId: imageId,
                     galleryId: $routeParams.id
                 };
-                galleryModel.deleteSingleImage(data).success(function(response) {
+                GalleryS3Service.deleteSingleImage(data).success(function(response) {
                     console.log('response', response);
                     $scope.singleGallery = response;
                 });
