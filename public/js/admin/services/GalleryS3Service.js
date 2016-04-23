@@ -5,7 +5,7 @@ app.factory('GalleryS3Service', ['$http', function($http) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                url: baseUrl + 'gallery',
+                url: baseUrl + '/ajax/galleryS3',
                 method: "POST",
                 data: {
                     name: galleryData.name

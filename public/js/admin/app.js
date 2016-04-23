@@ -47,7 +47,8 @@ app.config(['$routeProvider',function($routeProvider) {
             //     }
             // },
             // authenticated: true
-        });
+        })
+        .otherwise({ redirectTo: '/galleryS3/add' });
 
 }]);
 

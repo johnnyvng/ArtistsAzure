@@ -11,8 +11,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class GalleryController extends Controller
+class GalleryS3AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +55,8 @@ class GalleryController extends Controller
 
         $gallery = Gallery::create([
             'name' => $request->input('name'),
-            'user_id' => Auth::user()->id,
+            'user_id' => 1,
+            // 'user_id' => Auth::user()->id,
         ]);
 
         return response($gallery, 201);
