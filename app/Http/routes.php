@@ -1,5 +1,7 @@
 <?php
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -60,6 +62,16 @@ Route::get('/test', function(){
 	return view('test');
 });
 
+// Post image page
+Route::post('/upload-image', function(Request $request) {
+	return response($request->all(), 201);
+});
+
+Route::get('aws', function() {
+	echo 123;
+	$s3 = Storage::disk('s3');
+	$s3->put('myfile.txt', 'This is a dummy file', 'public');
+});
 
 /*
 |--------------------------------------------------------------------------
