@@ -356,3 +356,54 @@ padding: 10px;
     .service-wrapper .service-single p{  
 
    }
+   /*==================================
+   Gallery page
+   ==================================*/
+   .images{
+      display: inline-flex;
+      padding-top: 10px;
+   }
+   .image ng-binding ng-scope{
+      width: 125px;
+      margin: 0px;
+
+   }
+   .imageLabel{
+      width: 125px;
+
+   }
+   .image-container{
+      border: 1px solid #BDBDBD;
+      background-color: white;
+      padding: 15px;
+   }
+   .add-image{
+      padding-top: 15;
+
+   }
+   .upload-image{
+      padding-top: 5px;
+      border: none;
+      background-color: #2aabd2;
+      color: white;
+      margin-top: 10px;
+    }
+    .upload-image:hover
+     {
+        background-color: white;
+        color: #2aabd2;
+
+    }
+    .comment{
+      border: 1px solid #BDBDBD;
+      background-color: white;
+      padding: 10px;
+      margin-top:10px;
+    }
+    .submission-item{
+      border: 1px solid #2aabd2;
+      background-color: white;
+      padding: 5px 10px 5px;
+
+      margin-bottom: 10px;
+    }

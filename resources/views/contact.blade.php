@@ -33,21 +33,9 @@
                          <p><b>Tell us your need, we can help!</b></p></br>
                          <form class="form-horizontal" method = "post" action = "/contact">
                           <div class="form-group">
-                            <label for="firstname" class="col-sm-4 control-label">First Name:</label>
+                            <label for="firstname" class="col-sm-4 control-label">Name:</label>
                             <div class="col-sm-7">
-                              <input type="text" name ="name" class="form-control" id="firstname" placeholder="First Name">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lastname" class="col-sm-4 control-label">Last Name:</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="lastname" placeholder="Last Name">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="phonenumber" class="col-sm-4 control-label">Phone Number:</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="phonenumber" placeholder="phone number">
+                              <input type="text" name ="name" class="form-control" id="name" placeholder="First Name">
                             </div>
                           </div>
                           <div class="form-group">
@@ -59,16 +47,9 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Comments:</label>
                             <div class="col-sm-8">
-                              <textarea class="form-control" rows="5"></textarea>
+                              <textarea type = "string" name = "comment" class="form-control" placeholder="Please comment your thought" rows="5"></textarea>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <div class="col-sm-4"></div>
-                            <div class="col-sm-8">
-                              <input type="file" name="comment" size="40">
-                            </div>
-                          </div>
-                         
                           <div class="form-group">
                             <div class="col-sm-offset-7 col-sm-5">
                               <button type="submit" class="btn btn-primary">Submit</button>

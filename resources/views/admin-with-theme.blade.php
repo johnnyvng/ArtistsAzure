@@ -2,10 +2,8 @@
 
 @section('content')
       <div ng-app="adminApp">
-            <div class="container" ng-view>
-            	
-            </div>            
-      </div>    
-	
-
+            <div class="container" ng-view></div>
+            
+      </div>
+        
 @endsection

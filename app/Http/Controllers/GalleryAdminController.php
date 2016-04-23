@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -23,8 +26,9 @@ class GalleryAdminController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::orderBy('name')->get();
-        return response()->json($galleries);
+        return Gallery::all();
+        // $galleries = Gallery::orderBy('name')->get();
+        // return response()->json($galleries);
     }
 
     /**

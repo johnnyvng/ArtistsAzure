@@ -25,11 +25,6 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
         {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
-        <script>
-                var baseUrl = "{{ url('/') }}/";  
-                var csrfToken = "{{ csrf_token() }}";
-        </script>
-        
         <style>
             body {
                 font-family: 'Lato';
@@ -189,7 +184,7 @@
       </div>  <!--admin wrapper-->
 
     @yield('content')
-        
+    
 
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/angular.js') }}"></script>
