@@ -24,5 +24,31 @@ app.config(['$routeProvider',function($routeProvider) {
 		})
 		.otherwise({ redirectTo: '/pages' });
 
+		// DropzoneJS
+	$routeProvider
+		.when('/gallery/view', {
+            templateUrl: 'js/admin/partials/gallery/gallery-view.html',
+            controller: 'GalleryS3Controller',
+            // resolve: {
+            //     data: function(galleryModel) {
+            //         return {
+            //             galleries: galleryModel.getAllGalleries()
+            //         };
+            //     }
+            // },
+            // authenticated: true
+        })
+        .when('/gallery/add', {
+            templateUrl: 'js/admin/partials/gallery/gallery-add.html',
+            controller: 'GalleryS3Controller',
+            // resolve: {
+            //     data: function() {
+            //         return 'single';
+            //     }
+            // },
+            // authenticated: true
+        });
+
 }]);
+
 

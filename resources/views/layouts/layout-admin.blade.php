@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" ng-data="adminApp"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -201,6 +201,9 @@
     <script type="text/javascript" src="{{ URL::asset('js/admin/services/GalleryService.js') }}"></script>        
     <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/GalleryController.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/admin/services/ImageService.js') }}"></script>
+    <!-- Adding galleryS3 controller and service -->
+    <script type="text/javascript" src="{{ URL::asset('js/admin/services/GalleryS3Service.js') }}"></script>        
+    <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/GalleryS3Controller.js') }}"></script>
     <!-- Adding dropzone script to enhance gallery -->
     <script type="text/javascript" src="{{ URL::asset('js/admin/dropzone/dist/dropzone.js') }}"></script>
     <!-- Adding submission controller and service -->

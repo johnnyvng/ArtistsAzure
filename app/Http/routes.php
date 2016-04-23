@@ -51,6 +51,8 @@ Route::get('/largeestate', 'ServiceController@largeestate');
 Route::get('/commercial', 'ServiceController@commercial');
 // Gallery page
 Route::get('/gallery/{id?}', 'GalleryController@index');
+// Gallery for S3
+Route::resource('gallery', 'GalleryS3Controller');
 // Contact page
 Route::get('/contact', 'ContactController@contact');
 Route::post('/contact/{id?}', 'PageController@save_contact_form');
@@ -87,6 +89,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::resource('ajax/image', 'ImageAdminController');
 	Route::resource('ajax/submission','SubmissionAdminController');
 
-	
+
+
 
 });
