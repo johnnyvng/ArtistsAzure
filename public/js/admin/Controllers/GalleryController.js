@@ -19,10 +19,10 @@ app.controller('GalleryController', function ($scope, $routeParams, Gallery, Ima
                     'sending': function(file, xhr, formData) {
                     	console.log('sending');
                         formData.append('_token', csrfToken);
-                        formData.append('galleryId', $routeParams.id);
+                        formData.append('id', $routeParams.id);
                     },
                     'success': function(file, response) {
-                    	// console.log('success');
+                    	console.log('success');
                         console.log(response);
                         // $scope.singleGallery.images.push(response);
                         // console.log($scope.singleGallery);
