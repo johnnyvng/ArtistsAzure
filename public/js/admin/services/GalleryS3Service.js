@@ -12,11 +12,11 @@ app.factory('GalleryS3Service', ['$http', function($http) {
                 }
             });
         },
-        getAllGalleries: function(id) {
-            return $http.get(baseUrl + '/ajax/gallery/');
+        getAllGalleries: function() {
+            return $http.get(baseUrl + '/ajax/galleryS3');
         },
         getGalleryById: function(id) {
-            return $http.get(baseUrl + '/ajax/gallery/' + id);
+            return $http.get(baseUrl + '/ajax/galleryS3/' + id);
         },
         deleteSingleImage: function(data) {
             return $http({
