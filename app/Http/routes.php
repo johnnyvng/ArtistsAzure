@@ -52,7 +52,7 @@ Route::get('/commercial', 'ServiceController@commercial');
 // Gallery page
 Route::get('/gallery/{id?}', 'GalleryController@index');
 // Gallery for S3
-Route::get('/gallerys3/{id?}', 'GalleryS3Controller@index');
+Route::get('/galleryS3/{id?}', 'GalleryS3Controller@index');
 // Contact page
 Route::get('/contact', 'ContactController@contact');
 Route::post('/contact/{id?}', 'PageController@save_contact_form');

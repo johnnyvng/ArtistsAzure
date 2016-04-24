@@ -26,9 +26,9 @@ class GalleryAdminController extends Controller
      */
     public function index()
     {
-        return Gallery::all();
-        // $galleries = Gallery::orderBy('name')->get();
-        // return response()->json($galleries);
+        // return Gallery::all();
+        $galleries = Gallery::orderBy('name')->get();
+        return response()->json($galleries);
     }
 
     /**

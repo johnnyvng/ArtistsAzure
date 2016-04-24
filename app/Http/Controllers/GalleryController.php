@@ -17,6 +17,7 @@ class GalleryController extends Controller
     {
 
         $galleries = Gallery::all();
+        // return $galleries;
         $gallery = Gallery::find($id);
         return view('gallery', ['gallery' => $gallery, 'all_galleries' => $galleries]);
         

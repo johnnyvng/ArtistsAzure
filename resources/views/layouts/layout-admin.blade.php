@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="" ng-data="adminApp"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -113,6 +113,8 @@
                         <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Header</a></li>
                         <li><a href="{{ url('#/pages') }}">Pages</a></li>
                         <li><a href="{{ url('#/galleries') }}">Galleries</a></li>
+                        <li><a href="{{ url('#/galleryS3/add') }}">Add Galleries_S3</a></li>
+                        <li><a href="{{ url('#/galleryS3/view') }}">View Galleries_S3</a></li>
                         <li><a href="{{ url('#/services') }}">Services</a></li>
 
                         <li><a href=""><i class="fa fa-comments"></i>Comments</a></li>

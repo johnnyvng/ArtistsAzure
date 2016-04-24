@@ -1,14 +1,16 @@
 <?php
 
+// This GalleryS3AdminController equals to GalleryController
+
 namespace App\Http\Controllers;
 
-use App\File;
+// use App\File;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
+// use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class GalleryS3AdminController extends Controller
@@ -24,7 +26,9 @@ class GalleryS3AdminController extends Controller
      */
     public function index()
     {
+        // return Gallery::all();
         return Gallery::where('user_id', Auth::user()->id)->with('user')->get();
+
     }
 
     /**
@@ -55,8 +59,8 @@ class GalleryS3AdminController extends Controller
 
         $gallery = Gallery::create([
             'name' => $request->input('name'),
-            'user_id' => 1,
-            // 'user_id' => Auth::user()->id,
+            // 'user_id' => 1,
+            'user_id' => Auth::user()->id,
         ]);
 
         return response($gallery, 201);

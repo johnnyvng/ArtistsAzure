@@ -2,6 +2,23 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
 
     function($scope, $location, GalleryS3Service, $timeout, $routeParams, Lightbox, data) {
 
+        /*Show the logs all the galleries*/
+        GalleryS3Service.getAllGalleries().success(function(response) {
+            // $scope.galleries = response;
+            // console.log(response);
+            // Adding timeout like loading page
+            $timeout(function() {
+                $scope.galleries = response;
+                $scope.showGallery = true;
+            }, 1000);
+
+        });
+
+        // Single Gallery Page with $routeParams
+        if ($routeParams.id) {
+            console.log('Single gallery page' + $routeParams.id);
+        }
+
         /*Getting all the galleries*/
         if (data && data.galleries != undefined) {
             data.galleries.success(function(response) {
@@ -65,7 +82,7 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
                 }
             },
             viewGallery: function(id) {
-                $location.path('/galleryS3/' + id);
+                $location.path('/ajax/galleryS3/' + id);
             },
             openLightboxModal: function(index) {
                 Lightbox.openModal($scope.singleGallery.images, index);
