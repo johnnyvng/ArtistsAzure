@@ -61,8 +61,17 @@ Route::post('/contact/{id?}', 'PageController@save_contact_form');
 Route::get('/test', function(){
 	return view('test');
 });
-
-
+// use to test upload status of dropzone
+Route::post('upload-file', function() {
+	return response('Success', 200);
+});
+// Test uploading file to AWS S3
+use Illuminate\Support\Facades\Storage;
+Route::get('uploadaws', function(){
+	echo 123;
+	$s3=Storage::disk('s3');
+	$s3->put('myfile2.txt', 'This is my 2nd time upload to aws bucket', 'public');
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes

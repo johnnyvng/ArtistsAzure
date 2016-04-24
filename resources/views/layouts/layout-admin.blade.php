@@ -15,8 +15,8 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/main.css">      
-        <link rel="stylesheet" type="text/css" href="js/admin/dropzone/dist/basic.css">
-        <link rel="stylesheet" type="text/css" href="js/admin/dropzone/dist/dropzone.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/dropzone/dist/basic.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/dropzone/dist/dropzone.css">
         <!-- Fonts -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
@@ -190,12 +190,10 @@
 
     @yield('content')
     
-
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/angular.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/angular-route.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/admin/app.js') }}"></script>
-    
     <!-- Adding page controller and service -->
     <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/PageController.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/admin/services/PageService.js') }}"></script>
@@ -214,7 +212,8 @@
     <!-- Adding submission controller and service -->
     <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/SubmissionController.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/admin/services/SubmissionService.js') }}"></script>
-    
+    <!-- Adding Dropzonejs -->
+    <script type="text/javascript" src="{{ asset('bower_components/dropzone/dist/dropzone.js') }}"></script>
     <script type="text/javascript" src="js/vendor/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>  

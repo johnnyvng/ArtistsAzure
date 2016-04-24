@@ -55,18 +55,20 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
             singleGallery: {},
             dropzoneConfig: {
                 'options': {
-                    'url': baseUrl + 'upload-image'
+                    'url': baseUrl + 'upload-file'
                 },
                 'eventHandlers': {
                     'sending': function(file, xhr, formData) {
-                        formData.append('_token', csrfToken);
-                        formData.append('galleryId', $routeParams.id);
+                        console.log('Sending');
+                        // formData.append('_token', csrfToken);
+                        // formData.append('galleryId', $routeParams.id);
                     },
                     'success': function(file, response) {
+                        console.log('Success');
                         console.log(response);
-                        $scope.singleGallery.images.push(response);
-                        console.log($scope.singleGallery);
-                        $scope.$emit('imageAdded', $scope.singleGallery);
+                        // $scope.singleGallery.images.push(response);
+                        // console.log($scope.singleGallery);
+                        // $scope.$emit('imageAdded', $scope.singleGallery);
                     }
                 }
             }
