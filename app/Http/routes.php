@@ -67,9 +67,10 @@ Route::post('upload-file', function() {
 });
 // Test uploading file to AWS S3
 use Illuminate\Support\Facades\Storage;
-Route::get('uploadaws', function(){
+
+Route::get('uploadaws', function() {
 	echo 123;
-	$s3=Storage::disk('s3');
+	$s3 = Storage::disk('s3');
 	$s3->put('myfile2.txt', 'This is my 2nd time upload to aws bucket', 'public');
 });
 /*
