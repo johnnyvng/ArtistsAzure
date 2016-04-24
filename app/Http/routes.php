@@ -68,12 +68,13 @@ Route::get('/test', function(){
 
 // Test uploading file to AWS S3
 use Illuminate\Support\Facades\Storage;
+/*This route used to upload a text file for testing*/
+// Route::get('uploadaws', function() {
+// 	echo 123;
+// 	$s3 = Storage::disk('s3');
+// 	$s3->put('myfile2.txt', 'This is my 2nd time upload to aws bucket', 'public');
+// });
 
-Route::get('uploadaws', function() {
-	echo 123;
-	$s3 = Storage::disk('s3');
-	$s3->put('myfile2.txt', 'This is my 2nd time upload to aws bucket', 'public');
-});
 /*
 |--------------------------------------------------------------------------
 | Application Routes

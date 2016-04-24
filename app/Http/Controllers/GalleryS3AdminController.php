@@ -153,7 +153,18 @@ class GalleryS3AdminController extends Controller
                 'file_path' => env('S3_URL') . $fileName,
                 'type'      => 's3',
             ]);
+
+            DB::table('galleries_images')->insert([
+                'gallery_ID'=> $galleryId,
+                'file_ID'   => $file->id,
+            ]); 
+
+            $fileImg = File::find($file->id);
+            $fileImg->status = 1;
+            $fileImg->save();
         }
+
+        return response($file, 201);
 
         // $fileObj = new File;
         // $fileUpload = $fileObj->uploadThumbAndMainImage($request);
