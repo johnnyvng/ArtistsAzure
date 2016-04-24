@@ -4,13 +4,13 @@
 
 namespace App\Http\Controllers;
 
-// use App\File;
+use App\File;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\DB;
-// use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class GalleryS3AdminController extends Controller
@@ -75,6 +75,7 @@ class GalleryS3AdminController extends Controller
     public function show($id)
     {
         return Gallery::with('user')->where('id', $id)->first();
+        
         // $galleryObj = new Gallery;
 
         // return $galleryObj->getSingleGallery($id);
@@ -114,7 +115,7 @@ class GalleryS3AdminController extends Controller
         //
     }
 
-   /* public function uploadImage(Request $request)
+    public function uploadImage(Request $request)
     {
         $galleryId = $request->input('galleryId');
 
@@ -139,43 +140,58 @@ class GalleryS3AdminController extends Controller
             return response('There are errors in the form data', 400);
         }
 
-        $fileObj = new File;
-        $fileUpload = $fileObj->uploadThumbAndMainImage($request);
-        return response($fileUpload, 201);
-    }
+        $mimeType = $request->file('file')->getClientMimeType();
+        $fileSize = $request->file('file')->getClientSize();
+        $fileName = 'gallery_' . $galleryId . '_' . uniqid() . '.' . $request->file('file')->guessClientExtension();
 
-    public function deleteSingleImage(Request $request)
-    {
-        $imageId = $request->input('id');
-
-        try {
-            DB::beginTransaction();
-
-            // delete the file from the files table
-            $file = File::findOrFail($imageId);
-            $file->delete();
-
-            // remove the entry from the gallery image pivot table
-            DB::table('gallery_images')->where('file_id', $file->id)->delete();
-
-            // delete the actual image from S3
-            $fileName = str_replace(env('S3_URL'), '', $file->file_path);
-            $fileName = explode('/', $fileName);
-
-            $mainImage = "gallery_{$request->input('galleryId')}/main/" . $fileName[count($fileName) - 1];
-            $thumbImage = "gallery_{$request->input('galleryId')}/thumb/" . $fileName[count($fileName) - 1];
-            $mediummage = "gallery_{$request->input('galleryId')}/medium/" . $fileName[count($fileName) - 1];
-
-            $s3 = Storage::disk('s3');
-            $s3->delete($mainImage);
-            $s3->delete($thumbImage);
-            $s3->delete($mediummage);
-
-            DB::commit();
-        } catch (\PDOException $e) {
-            DB::rollBack();
+        $s3 = Storage::disk('s3');
+        if ($s3->put($fileName, file_get_contents($request->file('file')), 'public')) {
+            $file = File::create([
+                'file_name' => $fileName,
+                'mime_type' => $mimeType,
+                'file_size' => $fileSize,
+                'file_path' => env('S3_URL') . $fileName,
+                'type'      => 's3',
+            ]);
         }
 
-        return response($this->show($request->input('galleryId')), 200);
-    }*/
+        // $fileObj = new File;
+        // $fileUpload = $fileObj->uploadThumbAndMainImage($request);
+        // return response($fileUpload, 201);
+    }
+
+    // public function deleteSingleImage(Request $request)
+    // {
+    //     $imageId = $request->input('id');
+
+    //     try {
+    //         DB::beginTransaction();
+
+    //         // delete the file from the files table
+    //         $file = File::findOrFail($imageId);
+    //         $file->delete();
+
+    //         // remove the entry from the gallery image pivot table
+    //         DB::table('gallery_images')->where('file_id', $file->id)->delete();
+
+    //         // delete the actual image from S3
+    //         $fileName = str_replace(env('S3_URL'), '', $file->file_path);
+    //         $fileName = explode('/', $fileName);
+
+    //         $mainImage = "gallery_{$request->input('galleryId')}/main/" . $fileName[count($fileName) - 1];
+    //         $thumbImage = "gallery_{$request->input('galleryId')}/thumb/" . $fileName[count($fileName) - 1];
+    //         $mediummage = "gallery_{$request->input('galleryId')}/medium/" . $fileName[count($fileName) - 1];
+
+    //         $s3 = Storage::disk('s3');
+    //         $s3->delete($mainImage);
+    //         $s3->delete($thumbImage);
+    //         $s3->delete($mediummage);
+
+    //         DB::commit();
+    //     } catch (\PDOException $e) {
+    //         DB::rollBack();
+    //     }
+
+    //     return response($this->show($request->input('galleryId')), 200);
+    // }
 }

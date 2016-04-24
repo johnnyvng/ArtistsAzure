@@ -16,22 +16,22 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
 
         /* Single Gallery Page with $routeParams. If the param is present, load the single gallery data*/
         if ($routeParams.id) {
-            console.log('Single gallery page' + $routeParams.id);
+            // console.log('Single gallery page' + $routeParams.id);
             GalleryS3Service.getGalleryById($routeParams.id).success(function(response) 
             {
                 $scope.singleGallery = response;
-                console.log($scope.singleGallery);
+                // console.log($scope.singleGallery);
             });
         }
 
         /*Getting all the galleries*/
-        /*if (data && data.galleries != undefined) {
+        if (data && data.galleries != undefined) {
             data.galleries.success(function(response) {
                 $scope.galleries = response;
                 console.log('Galleries loaded', $scope.galleries);
                 $scope.showGallery = true;
             });
-        }*/
+        }
 
         /*Fetch a single gallery on the view gallery page*/
         if (data && data.singleGallery != undefined) {
@@ -55,20 +55,20 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
             singleGallery: {},
             dropzoneConfig: {
                 'options': {
-                    'url': baseUrl + 'upload-file'
+                    'url': baseUrl + 'ajax/upload-file'
                 },
                 'eventHandlers': {
                     'sending': function(file, xhr, formData) {
                         console.log('Sending');
-                        // formData.append('_token', csrfToken);
-                        // formData.append('galleryId', $routeParams.id);
+                        formData.append('_token', csrfToken);
+                        formData.append('galleryId', $routeParams.id);
                     },
                     'success': function(file, response) {
                         console.log('Success');
                         console.log(response);
                         // $scope.singleGallery.images.push(response);
-                        // console.log($scope.singleGallery);
-                        // $scope.$emit('imageAdded', $scope.singleGallery);
+                        console.log($scope.singleGallery);
+                        $scope.$emit('imageAdded', $scope.singleGallery);
                     }
                 }
             }

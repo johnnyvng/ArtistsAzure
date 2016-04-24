@@ -33,4 +33,5 @@ class CreateFilesTable extends Migration
     {
         Schema::drop('files');
     }
+    
 }

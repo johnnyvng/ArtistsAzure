@@ -61,10 +61,11 @@ Route::post('/contact/{id?}', 'PageController@save_contact_form');
 Route::get('/test', function(){
 	return view('test');
 });
-// use to test upload status of dropzone
-Route::post('upload-file', function() {
-	return response('Success', 200);
-});
+/*Test upload status of dropzone*/
+// Route::post('upload-file', function() {
+// 	return response('Success', 200);
+// });
+
 // Test uploading file to AWS S3
 use Illuminate\Support\Facades\Storage;
 
@@ -99,7 +100,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('ajax/galleryS3', 'GalleryS3AdminController');
 	Route::resource('ajax/image', 'ImageAdminController');
 	Route::resource('ajax/submission','SubmissionAdminController');
-
+	/*Post upload file using GalleryS3AdminController with uploadImage function*/
+	Route::post('ajax/upload-file', 'GalleryS3AdminController@uploadImage');
 
 
 });

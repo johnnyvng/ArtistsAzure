@@ -29,14 +29,14 @@ class Gallery extends Model
         return $this->belongsTo('App\User');
     }
 
-   //  public function getSingleGallery($id)
-   //  {
-   //      $gallery = Gallery::with('user')->where('id', $id)->first();
+    public function getSingleGallery($id)
+    {
+        $gallery = Gallery::with('user')->where('id', $id)->first();
 
-   //      $gallery->images = $this->getGalleryImageUrls($id, $gallery->id);
+        $gallery->images = $this->getGalleryImageUrls($id, $gallery->id);
 
-   //      return $gallery;
-   //  }
+        return $gallery;
+    }
 
     // private function getGalleryImageUrls($id, $galleryId)
     // {
