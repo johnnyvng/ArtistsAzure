@@ -1,0 +1,5 @@
+S3_KEY=AKIAJC7MBJQHL4ZRWPCA
+S3_SECRET=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
+S3_BUCKET=project491
+S3_REGION=us-east-1
+S3_URL=https://s3.amazonaws.com/project491/
