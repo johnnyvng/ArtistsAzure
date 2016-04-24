@@ -4,11 +4,11 @@ APP_KEY=nQcwgkksSF0NLjGRbgSVvC31RHQvMyWe
 APP_URL=http://project491.azurewebsites.net/
 
 DB_CONNECTION=mysql
-DB_HOST=us-cdbr-azure-east-c.cloudapp.net
+DB_HOST=localhost
 DB_PORT=3306
-DB_DATABASE=MIS491ProjectDB
-DB_USERNAME=be28560bc36251
-DB_PASSWORD=56e32a07
+DB_DATABASE=projecttest
+DB_USERNAME=homestead
+DB_PASSWORD=secret
 
 CACHE_DRIVER=file
 SESSION_DRIVER=file
