@@ -18,15 +18,18 @@ app.config(['$routeProvider',function($routeProvider) {
 			controller: 'GalleryController',
 			templateUrl: '/js/admin/partials/galleryTmpl.html'
 		})
-		.when('/submissions/:id?', {
-			controller: 'SubmissionController',
-			templateUrl: '/js/admin/partials/submissionTmpl.html'
-		})
-		.otherwise({ redirectTo: '/pages' });
-
-		// Gallery for DropzoneJS
-	$routeProvider
-		.when('/galleryS3/view', {
+        .when('/galleryS3/add', {
+            templateUrl: 'js/admin/partials/gallery/gallery-add.html',
+            controller: 'GalleryS3Controller',
+            // resolve: {
+            //     data: function() {
+            //         return 'single';
+            //     }
+            // },
+            authenticated: true
+        })  
+        // Gallery for DropzoneJS
+        .when('/galleryS3/view', {
             templateUrl: 'js/admin/partials/gallery/gallery-view.html',
             controller: 'GalleryS3Controller',
             // resolve: {
@@ -36,7 +39,7 @@ app.config(['$routeProvider',function($routeProvider) {
             //         };
             //     }
             // },
-            // authenticated: true
+            authenticated: true
         })
         .when('/galleryS3/view/:id?', {
             templateUrl: 'js/admin/partials/gallery/gallery-single.html',
@@ -48,19 +51,14 @@ app.config(['$routeProvider',function($routeProvider) {
             //         };
             //     }
             // },
-            // authenticated: true
-        })
-        .when('/galleryS3/add', {
-            templateUrl: 'js/admin/partials/gallery/gallery-add.html',
-            controller: 'GalleryS3Controller',
-            // resolve: {
-            //     data: function() {
-            //         return 'single';
-            //     }
-            // },
-            // authenticated: true
-        })
-        .otherwise({ redirectTo: '/galleryS3/add' });
+            authenticated: true
+        })        
+		.when('/submissions/:id?', {
+			controller: 'SubmissionController',
+			templateUrl: '/js/admin/partials/submissionTmpl.html'
+		})
+		.otherwise({ redirectTo: '/pages' });
+	
 
 }]);
 

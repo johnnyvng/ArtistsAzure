@@ -74,8 +74,10 @@ class GalleryS3AdminController extends Controller
      */
     public function show($id)
     {
-        $galleryObj = new Gallery;
-        return $galleryObj->getSingleGallery($id);
+        return Gallery::with('user')->where('id', $id)->first();
+        // $galleryObj = new Gallery;
+
+        // return $galleryObj->getSingleGallery($id);
     }
 
     /**
@@ -112,7 +114,7 @@ class GalleryS3AdminController extends Controller
         //
     }
 
-    public function uploadImage(Request $request)
+   /* public function uploadImage(Request $request)
     {
         $galleryId = $request->input('galleryId');
 
@@ -175,5 +177,5 @@ class GalleryS3AdminController extends Controller
         }
 
         return response($this->show($request->input('galleryId')), 200);
-    }
+    }*/
 }

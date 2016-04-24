@@ -14,19 +14,24 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
 
         });
 
-        // Single Gallery Page with $routeParams
+        /* Single Gallery Page with $routeParams. If the param is present, load the single gallery data*/
         if ($routeParams.id) {
             console.log('Single gallery page' + $routeParams.id);
+            GalleryS3Service.getGalleryById($routeParams.id).success(function(response) 
+            {
+                $scope.singleGallery = response;
+                console.log($scope.singleGallery);
+            });
         }
 
         /*Getting all the galleries*/
-        if (data && data.galleries != undefined) {
+        /*if (data && data.galleries != undefined) {
             data.galleries.success(function(response) {
                 $scope.galleries = response;
                 console.log('Galleries loaded', $scope.galleries);
                 $scope.showGallery = true;
             });
-        }
+        }*/
 
         /*Fetch a single gallery on the view gallery page*/
         if (data && data.singleGallery != undefined) {
@@ -82,7 +87,7 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
                 }
             },
             viewGallery: function(id) {
-                $location.path('/ajax/galleryS3/' + id);
+                $location.path('/galleryS3/view/' + id);
             },
             openLightboxModal: function(index) {
                 Lightbox.openModal($scope.singleGallery.images, index);

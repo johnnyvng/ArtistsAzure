@@ -81,6 +81,9 @@
             .image img {
                 height: 150px;
             }
+            .gallery-container {
+                cursor: pointer;
+            }
         </style>
     </head>
 
