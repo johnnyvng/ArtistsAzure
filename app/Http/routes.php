@@ -67,7 +67,7 @@ Route::get('/test', function(){
 // });
 
 // Test uploading file to AWS S3
-use Illuminate\Support\Facades\Storage;
+// use Illuminate\Support\Facades\Storage;
 /*This route used to upload a text file for testing*/
 // Route::get('uploadaws', function() {
 // 	echo 123;
@@ -101,7 +101,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('ajax/galleryS3', 'GalleryS3AdminController');
 	Route::resource('ajax/image', 'ImageAdminController');
 	Route::resource('ajax/submission','SubmissionAdminController');
-	/*Post upload file using GalleryS3AdminController with uploadImage function*/
+
+	/*upload file using GalleryS3AdminController with uploadImage function*/
 	Route::post('ajax/upload-file', 'GalleryS3AdminController@uploadImage');
 
 

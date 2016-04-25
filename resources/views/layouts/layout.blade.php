@@ -98,11 +98,11 @@
     </footer>
 
 
-<script src="js/vendor/jquery-1.11.2.min.js"></script>
+<script src="js/jquery-1.11.2.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
 <script src="js/allinone_carousel.js" type="text/javascript"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script>
 jQuery(function() {
   jQuery('#allinone_carousel_charming').allinone_carousel({
@@ -125,8 +125,6 @@ jQuery(function() {
 });
 </script>
 <script src="js/main.js"></script>
-<script src="js/vendor/jquery-1.11.2.min.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/simple-lightbox.min.js"></script>
 <script>
   $(function(){

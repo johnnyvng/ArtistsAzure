@@ -190,9 +190,13 @@
     @yield('content')
     
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/jquery-1.11.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/angular.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/angular-route.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/admin/app.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>  
+    <script type="text/javascript" src="{{ URL::asset('js/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
     <!-- Adding page controller and service -->
     <script type="text/javascript" src="{{ URL::asset('js/admin/controllers/PageController.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/admin/services/PageService.js') }}"></script>
@@ -217,11 +221,6 @@
     <script type="text/javascript" src="{{ URL::asset('bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('bower_components/angular-loading-bar/build/loading-bar.min.js') }}"></script>
-
-    <script type="text/javascript" src="{{ URL::asset('js/vendor/jquery-1.11.2.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/vendor/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>  
-    <script type="text/javascript" src="{{ URL::asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
 
     </body>
  </html>
