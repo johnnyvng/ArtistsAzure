@@ -74,11 +74,12 @@ class GalleryS3AdminController extends Controller
      */
     public function show($id)
     {
-        return Gallery::with('user')->where('id', $id)->first();
+        /*Show the images inside the gallery. We move this line of code to Gallery.php model*/
+        //return Gallery::with('user')->where('id', $id)->first();
         
-        // $galleryObj = new Gallery;
+        $galleryObj = new Gallery;
 
-        // return $galleryObj->getSingleGallery($id);
+        return $galleryObj->getSingleGallery($id);
     }
 
     /**
@@ -140,6 +141,7 @@ class GalleryS3AdminController extends Controller
             return response('There are errors in the form data', 400);
         }
 
+        /* // Copy this part into File.php
         $mimeType = $request->file('file')->getClientMimeType();
         $fileSize = $request->file('file')->getClientSize();
         $fileName = 'gallery_' . $galleryId . '_' . uniqid() . '.' . $request->file('file')->guessClientExtension();
@@ -164,11 +166,12 @@ class GalleryS3AdminController extends Controller
             $fileImg->save();
         }
 
-        return response($file, 201);
+        return response($file, 201);*/
 
-        // $fileObj = new File;
-        // $fileUpload = $fileObj->uploadThumbAndMainImage($request);
-        // return response($fileUpload, 201);
+        /*Replace the code above with $fileObj and get the uploadThumbAndMainImage() function from File.php*/
+        $fileObj = new File;
+        $fileUpload = $fileObj->uploadThumbAndMainImage($request);
+        return response($fileUpload, 201);
     }
 
     // public function deleteSingleImage(Request $request)

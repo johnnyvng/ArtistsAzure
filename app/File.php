@@ -2,14 +2,19 @@
 
 namespace App;
 
+use App\File;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class File extends Model
 {
     //
     protected $fillable = ['file_name', 'mime_type', 'file_size', 'file_path', 'status', 'type'];
 
-/*    public function uploadThumbAndMainImage(Request $request)
+    public function uploadThumbAndMainImage(Request $request)
     {
         // get basic info
         $s3 = Storage::disk('s3');
@@ -46,9 +51,9 @@ class File extends Model
             'type' => 's3',
         ]);
 
-        DB::table('gallery_images')->insert([
-            'gallery_id' => $galleryId,
-            'file_id' => $file->id,
+        DB::table('galleries_images')->insert([
+            'gallery_ID' => $galleryId,
+            'file_ID' => $file->id,
         ]);
 
         $fileImg = File::find($file->id);
@@ -62,5 +67,5 @@ class File extends Model
             'url' => env('S3_URL') . "gallery_{$galleryId}/medium/" . $filename,
             'main' => env('S3_URL') . "gallery_{$galleryId}/main/" . $filename,
         ];
-    }*/
+    }
 }
