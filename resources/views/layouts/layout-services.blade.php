@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link href="css/allinone_carousel.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     
 
@@ -103,6 +102,7 @@
 <script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
 <script src="js/allinone_carousel.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script>
 jQuery(function() {
   jQuery('#allinone_carousel_charming').allinone_carousel({
