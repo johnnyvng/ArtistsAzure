@@ -61,8 +61,9 @@ class File extends Model
         $fileImg->save();
 
         return [
-            'file' => $fileImg,
-            'file_id' => $file->id,
+            'file' => $file,
+            // 'file' => $fileImg,
+            // 'file_id' => $file->id,
             'thumbUrl' => env('S3_URL') . "gallery_{$galleryId}/thumb/" . $filename,
             'url' => env('S3_URL') . "gallery_{$galleryId}/medium/" . $filename,
             'main' => env('S3_URL') . "gallery_{$galleryId}/main/" . $filename,

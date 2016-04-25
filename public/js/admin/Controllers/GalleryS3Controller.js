@@ -66,9 +66,9 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
                     'success': function(file, response) {
                         // console.log('Success');
                         console.log(response);
-                        // $scope.singleGallery.images.push(response);
+                        $scope.singleGallery.images.push(response);
                         // console.log($scope.singleGallery);
-                        // $scope.$emit('imageAdded', $scope.singleGallery);
+                        $scope.$emit('imageAdded', $scope.singleGallery);
                     }
                 }
             }
@@ -93,7 +93,7 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
             },
             openLightboxModal: function(index) {
                 Lightbox.openModal($scope.singleGallery.images, index);
-            },
+            }
             // deleteImage: function(imageId) {
             //     var data = {
             //         imageId: imageId,

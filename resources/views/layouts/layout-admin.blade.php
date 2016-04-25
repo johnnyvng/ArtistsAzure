@@ -218,10 +218,10 @@
     <script type="text/javascript" src="{{ URL::asset('bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('bower_components/angular-loading-bar/build/loading-bar.min.js') }}"></script>
 
-    <script type="text/javascript" src="js/vendor/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>  
-    <script type="text/javascript" src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/vendor/jquery-1.11.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/vendor/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>  
+    <script type="text/javascript" src="{{ URL::asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
 
     </body>
  </html>
