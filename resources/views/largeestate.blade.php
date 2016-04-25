@@ -1,5 +1,5 @@
 <!--  -->
-@extends('layouts.layout-services')
+@extends('layouts.master')
 
 @section('title', 'Our Services')
 

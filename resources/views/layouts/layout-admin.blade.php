@@ -91,7 +91,7 @@
             .gallery-image-single .delete-icon 
             {
               position: absolute;
-              bottom: 30px;
+              bottom: 5px;
               right: 50%;
               display: none; 
             }
@@ -206,7 +206,6 @@
     @yield('content')
     
     <script type="text/javascript" src="{{ URL::asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/jquery-1.11.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('bower_components/angular/angular.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('bower_components/angular-route/angular-route.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>

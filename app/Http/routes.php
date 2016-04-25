@@ -44,7 +44,7 @@ Route::get('/', 'PageController@index');
 Route::get('/about', 'PageController@about'); 
 // Service page 
 // Route::get('/services', 'ServicesController@services');
-Route::get('/service', 'ServiceController@service');
+Route::get('/services', 'ServiceController@service');
 // Clients pages
 Route::get('/government', 'ServiceController@government');
 Route::get('/largeestate', 'ServiceController@largeestate');
