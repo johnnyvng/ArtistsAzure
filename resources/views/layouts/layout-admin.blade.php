@@ -189,12 +189,12 @@
 
     @yield('content')
     
-    <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/jquery-1.11.2.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/angular.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/angular-route.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('bower_components/angular/angular.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('bower_components/angular-route/angular-route.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/admin/app.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>  
     <script type="text/javascript" src="{{ URL::asset('js/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
     <!-- Adding page controller and service -->
