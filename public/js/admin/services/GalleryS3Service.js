@@ -23,7 +23,7 @@ app.factory('GalleryS3Service', ['$http', function($http) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                url: baseUrl + 'delete-single-image',
+                url: baseUrl + 'ajax/delete-single-image',
                 method: "POST",
                 data: {
                     id: data.imageId,

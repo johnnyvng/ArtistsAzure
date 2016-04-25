@@ -93,17 +93,17 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
             },
             openLightboxModal: function(index) {
                 Lightbox.openModal($scope.singleGallery.images, index);
+            },
+            deleteImage: function(imageId) {
+                var data = {
+                    imageId: imageId,
+                    galleryId: $routeParams.id
+                };
+                GalleryS3Service.deleteSingleImage(data).success(function(response) {
+                    console.log('response', response);
+                    $scope.singleGallery = response;
+                });
             }
-            // deleteImage: function(imageId) {
-            //     var data = {
-            //         imageId: imageId,
-            //         galleryId: $routeParams.id
-            //     };
-            //     GalleryS3Service.deleteSingleImage(data).success(function(response) {
-            //         console.log('response', response);
-            //         $scope.singleGallery = response;
-            //     });
-            // }
         });
     }
 ]);

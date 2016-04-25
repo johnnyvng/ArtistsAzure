@@ -104,6 +104,7 @@ Route::group(['middleware' => 'web'], function () {
 
 	/*upload file using GalleryS3AdminController with uploadImage function*/
 	Route::post('ajax/upload-file', 'GalleryS3AdminController@uploadImage');
+	Route::post('ajax/delete-single-image', 'GalleryS3AdminController@deleteSingleImage');
 
 
 });
