@@ -77,8 +77,8 @@ class GalleryS3AdminController extends Controller
         /*Show the images inside the gallery. We move this line of code to Gallery.php model*/
         //return Gallery::with('user')->where('id', $id)->first();
         
+        /*create a new getSingleGallery() function and store it in Gallery.php model*/
         $galleryObj = new Gallery;
-
         return $galleryObj->getSingleGallery($id);
     }
 

@@ -1,4 +1,4 @@
-app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service', '$timeout', '$routeParams',
+app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service', '$timeout', '$routeParams', 'Lightbox', 
 
     function($scope, $location, GalleryS3Service, $timeout, $routeParams, Lightbox, data) {
 
@@ -64,7 +64,7 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
                         formData.append('galleryId', $routeParams.id);
                     },
                     'success': function(file, response) {
-                        console.log('Success');
+                        // console.log('Success');
                         console.log(response);
                         // $scope.singleGallery.images.push(response);
                         // console.log($scope.singleGallery);
@@ -94,16 +94,16 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
             openLightboxModal: function(index) {
                 Lightbox.openModal($scope.singleGallery.images, index);
             },
-            deleteImage: function(imageId) {
-                var data = {
-                    imageId: imageId,
-                    galleryId: $routeParams.id
-                };
-                GalleryS3Service.deleteSingleImage(data).success(function(response) {
-                    console.log('response', response);
-                    $scope.singleGallery = response;
-                });
-            }
+            // deleteImage: function(imageId) {
+            //     var data = {
+            //         imageId: imageId,
+            //         galleryId: $routeParams.id
+            //     };
+            //     GalleryS3Service.deleteSingleImage(data).success(function(response) {
+            //         console.log('response', response);
+            //         $scope.singleGallery = response;
+            //     });
+            // }
         });
     }
 ]);

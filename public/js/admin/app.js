@@ -1,4 +1,4 @@
-var app = angular.module('adminApp', ['ngRoute']);
+var app = angular.module('adminApp', ['ngRoute',  'ui.bootstrap', 'bootstrapLightbox','angular-loading-bar']);
 
 app.config(['$routeProvider',function($routeProvider) {
 	$routeProvider

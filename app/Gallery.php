@@ -33,29 +33,34 @@ class Gallery extends Model
     {
         $gallery = Gallery::with('user')->where('id', $id)->first();
 
+        // $gallery->images = $this->getGalleryImageUrls($id);
+
         $gallery->images = $this->getGalleryImageUrls($id, $gallery->id);
 
         return $gallery;
     }
 
-    // private function getGalleryImageUrls($id, $galleryId)
-    // {
-    //     $files = DB::table('gallery_images')
-    //         ->where('gallery_id', $id)
-    //         ->join('files', 'files.id', '=', 'gallery_images.file_id')
-    //         ->get();
+    // private function getGalleryImageUrls($id)
+    private function getGalleryImageUrls($id, $galleryId) // use this for $finalData
+    {
+        $files = DB::table('galleries_images')
+            ->where('gallery_ID', $id)
+            ->join('files', 'files.id', '=', 'galleries_images.file_ID')
+            ->get();
 
-    //     $finalData = [];
-    //     foreach ($files as $key => $file) {
-    //         $finalData[$key] = [
-    //             'file_id' => $file->id,
-    //             'thumbUrl' => env('S3_URL') . "gallery_{$galleryId}/thumb/" . $file->file_name,
-    //             'url' => env('S3_URL') . "gallery_{$galleryId}/medium/" . $file->file_name,
-    //             'main' => env('S3_URL') . "gallery_{$galleryId}/main/" . $file->file_name,
-    //         ];
-    //     }
+        // return $files;
 
-    //     return $finalData;
-    // }
+        $finalData = [];
+        foreach ($files as $key => $file) {
+            $finalData[$key] = [
+                // 'file_ID' => $file->id,
+                'thumbUrl' => env('S3_URL') . "gallery_{$galleryId}/thumb/" . $file->file_name, // use thumbUrl instead of thumb because of lightbox
+                'url'      => env('S3_URL') . "gallery_{$galleryId}/medium/" . $file->file_name, // use url instead of medium because of lightbox
+                'main'     => env('S3_URL') . "gallery_{$galleryId}/main/" . $file->file_name,
+            ];
+        }
+
+        return $finalData;
+    }
 
 }
