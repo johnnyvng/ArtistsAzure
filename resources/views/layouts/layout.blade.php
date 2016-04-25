@@ -107,8 +107,8 @@
 jQuery(function() {
   jQuery('#allinone_carousel_charming').allinone_carousel({
     skin: 'charming',
-    width: 600,
-    height: 300,
+    width: 1100,
+    height: 350,
     responsive:true,
     autoPlay: 5,
     resizeImages:true,
@@ -117,7 +117,7 @@ jQuery(function() {
     verticalAdjustment:50,
     showPreviewThumbs:false,
     //easing:'easeOutBounce',
-    numberOfVisibleItems:5,
+    numberOfVisibleItems:8,
     nextPrevMarginTop:23,
     playMovieMarginTop:0,
     bottomNavMarginBottom:-10 
