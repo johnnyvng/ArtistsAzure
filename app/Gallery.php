@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Image;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -12,9 +13,9 @@ class Gallery extends Model
 
    public function images()
    {
-   		return $this->hasMany('App\Image');
+        return $this->hasMany('App\Image');
    }
-   
+
 
    // Dropzonejs S3
    protected $fillable = ['name', 'user_id'];

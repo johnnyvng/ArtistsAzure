@@ -67,7 +67,7 @@ app.controller('GalleryS3Controller', ['$scope', '$location', 'GalleryS3Service'
                         // console.log('Success');
                         console.log(response);
                         $scope.singleGallery.images.push(response);
-                        // console.log($scope.singleGallery);
+                        console.log($scope.singleGallery);
                         $scope.$emit('imageAdded', $scope.singleGallery);
                     }
                 }
