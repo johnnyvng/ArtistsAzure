@@ -1,21 +1,35 @@
-<div class="row">
-    <div class="col-sm-12">
-        <h1 class="page-header">My galleries</h1>
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <title>View Gallery</title>
+    </head>
+<body>
+<div id="admin-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="page-header">My galleries</h1>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-sm-12" ng-hide="showGallery">Loading...</div>
-    <div class="col-sm-3 gallery-container" ng-repeat="gallery in galleries | orderBy:id:true" ng-show="showGallery" ng-click="viewGallery(gallery.id)">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">{{gallery.name}}</h3>
-            </div>
-            <div class="panel-body">
-                Created by: <strong>{{gallery.user.name}}</strong>
-                <br>
-                Created <strong>{{gallery.created_at}}</strong>
+    <div class="row">
+        <div class="col-sm-12" ng-hide="showGallery">Loading...</div>
+        <div class="col-sm-3 gallery-container" ng-repeat="gallery in galleries | orderBy:id:true" ng-show="showGallery" ng-click="viewGallery(gallery.id)">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{gallery.name}}</h3>
+                </div>
+                <div class="panel-body">
+                    Created by: <strong>{{gallery.user.name}}</strong>
+                    <br>
+                    Created <strong>{{gallery.created_at}}</strong>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</div><!--admin content-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+
+
+    </body>
+ </html>
