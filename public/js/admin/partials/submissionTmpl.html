@@ -3,42 +3,6 @@
     
     <div class="wrapper">
     <div class="admin-wrapper">
-        <nav class="adminmenu-wrapper" role="navigation">
-          <ul class="adminmenu">
-            <li><a href=""><span class="glyphicon glyphicon-dashboard"></span>Dashboard</a></li>
-            <!-- <li><a data-toggle="collapse" href="#postcollapse" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pushpin"></span>Post</a>
-              <div class="collapse" id="postcollapse">
-                <ul class="submenu">
-                  <li><a href="">Edit</a></li>
-                  <li><a href="">Add New</a></li>
-                  <li><a href="">Post Tags</a></li>
-                  <li><a href="">Categories</a></li>
-                </ul>
-              </div>   
-            </li> -->
-            <!-- <li>
-              <a data-toggle="collapse" href="#monthly-collapse" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-calendar"></span>Monthly Special</a>
-              <div class="collapse" id="monthly-collapse">
-                <ul class="submenu">
-                  <li><a href="">Edit</a></li>
-                  <li><a href="">Media</a></li>
-                  <li><a href="">Links</a></li>
-                </ul>
-              </div>
-            </li> -->
-            <li>
-              <a data-toggle="collapse" href="#page-collapse" aria-expanded="true" aria-controls="collapseExample"><span class="glyphicon glyphicon-file"></span>Services</a>
-            </li>
-            <!-- <li><a href=""><i class="fa fa-comments"></i>Comments</a></li>
-            <li><a href=""><i class="fa fa-paint-brush"></i>Appearance</a></li>
-            <li><a href=""><i class="fa fa-cogs"></i>Plugins</a></li>
-            <li><a href=""><i class="fa fa-user"></i>Users</a></li>
-            <li><a href=""><i class="fa fa-wrench"></i>Tools</a></li>
-            <li><a href=""><i class="fa fa-sliders"></i>Settings</a></li>
-            <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Header</a></li>
-            <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Flutter</a></li>  -->
-          </ul>  
-        </nav>
         <div id="admin-content">
             <div id="wrap">
                 <h1>Submissions Form Contact Page</h1> 
@@ -50,15 +14,15 @@
 
 
                       <div class="content-editor">
-    							<div class="list">
-        							<div class="submission-item" ng-repeat="sub in list">
-            							<h4>{{ sub.name }}</h4><h6>{{ sub.email }}</h6>
-            							<strong>Commented: </strong>
-            							<br>
-            							{{ sub.comment }}
-        							</div>
-        							
-    							</div>
+                  <div class="list">
+                      <div class="submission-item" ng-repeat="sub in list">
+                          <h4>{{ sub.name }}</h4><h6>{{ sub.email }}</h6>
+                          <strong>Commented: </strong>
+                          <br>
+                          {{ sub.comment }}
+                      </div>
+                      
+                  </div>
                      </div><!--content editor-->
 
 
@@ -83,6 +47,4 @@
         <div>
             <button ng-click="clearPage()">New</button>
             <button ng-click="savePage()">Save</button>
-        </div>
-
- -->
+        </div>  -->

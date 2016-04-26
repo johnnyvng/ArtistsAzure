@@ -40,11 +40,12 @@ Route::get('/admin', function(){
 
 // Home page
 Route::get('/', 'PageController@index'); 
+// Route::get('/', 'PageController@pageImage');
 // About page
 Route::get('/about', 'PageController@about'); 
 // Service page 
 // Route::get('/services', 'ServicesController@services');
-Route::get('/services', 'ServiceController@service');
+Route::get('/service', 'ServiceController@service');
 // Clients pages
 Route::get('/government', 'ServiceController@government');
 Route::get('/largeestate', 'ServiceController@largeestate');

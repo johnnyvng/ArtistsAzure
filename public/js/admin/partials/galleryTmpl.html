@@ -1,118 +1,13 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<html class="no-js" lang="">
     <head>
         <title>Gallery</title>
     </head>
 <body>
-<!-- <div class="content">
-    <div class="title">Admin</div>
-    <div class="wrapper">
-        <div>
-            <label>Gallery Name</label>
-            <input type="text" ng-model="current_gallery.name">
-        </div>
-        <div style="clear: both;">
-            <button ng-click="clearGallery()">New</button>
-            <button ng-click="saveGallery()">Save</button>
-        </div>
-        <div style="clear: both;">
-            <label>Images</label>
-             <div style="clear: both;"></div>
-            <div class="images">
-                <div class="image" ng-repeat="image in current_image_list">
-                    <img src="/galleries/{{ image.filename }}">
-                    <br>
-                    {{ image.name }} ({{ image.filename }})
-                </div>
-            </div>
-        </div>
-        <div style="clear: both;">
-            <label>Add New</label>
-            <div class="images">
-                
-                <p ng-show="current_gallery.id"> 
-                    <input type = "file" file-model = "myFile"/>
-                    <button ng-click = "uploadImage()">Upload Image</button>
-                </p>
-
-                <p ng-hide="current_gallery.id">Select or Create a new Gallery</p>
-
-            </div>
-        </div>
-    </div>
-</div>
-<div class="list_wrapper">
-    <div class="title">Galleries</div>
-    <div class="list">
-        <div class="item" ng-repeat="gallery in gallery_list">
-            <a class="link" ng-click="getGallery(gallery.id)">{{ gallery.name }}</a>
-        </div>
-    </div>
-</div>
- -->
-
-<!-- 
-<div class="content">  
-    <div class="wrapper">
-    <div class="admin-wrapper">
-        <nav class="adminmenu-wrapper" role="navigation">
-          <ul class="adminmenu">
-            <li><a href="/gallery"><i class="fa fa-paint-brush"></i>Gallery Page</a></li>
-            <div class="container">
-                <div class="list">
-                    <div class="item" ng-repeat="gallery in gallery_list">
-                        <a class="link" ng-click="getGallery(gallery.id)">{{ gallery.name }}</a>
-                    </div>
-                </div>
-            </div> 
-            <li><a data-toggle="collapse" href="#postcollapse" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-pushpin"></span>Post</a>
-              <div class="collapse" id="postcollapse">
-                <ul class="submenu">
-                  <li><a href="">Edit</a></li>
-                  <li><a href="">Add New</a></li>
-                  <li><a href="">Post Tags</a></li>
-                  <li><a href="">Categories</a></li>
-                </ul>
-              </div>   
-            </li>
-            <li>
-              <a data-toggle="collapse" href="#monthly-collapse" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-calendar"></span>Monthly Special</a>
-              <div class="collapse" id="monthly-collapse">
-                <ul class="submenu">
-                  <li><a href="">Edit</a></li>
-                  <li><a href="">Media</a></li>
-                  <li><a href="">Links</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>              
-                <ul class="submenu">
-                  // Replace 2 buttons of services with buttons of Gallery
-                  <li><a href=""  class="current" ng-click="saveService()">Save</a></li>
-                  <li><a href="" ng-click="clearService()">Add New</a></li>
-                  <div style="clear: both;">
-                      <button ng-click="clearGallery()">Clear</button>
-                      <button ng-click="saveGallery()">Save</button>
-                  </div>
-                </ul>              
-            </li>
-            <li><a href=""><i class="fa fa-comments"></i>Comments</a></li>
-            <li><a href=""><i class="fa fa-paint-brush"></i>Appearance</a></li>
-            <li><a href=""><i class="fa fa-cogs"></i>Plugins</a></li>
-            <li><a href=""><i class="fa fa-user"></i>Users</a></li>
-            <li><a href=""><i class="fa fa-wrench"></i>Tools</a></li>
-            <li><a href=""><i class="fa fa-sliders"></i>Settings</a></li>
-            <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Header</a></li>
-            <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Flutter</a></li>
-          </ul>  
-        </nav> -->
  <div id="admin-content">
         <div id="wrap">
             <h1>Gallery Collection</h1>
-              <div class="col-md-9 pdl">
+              <div class="col-md-8 pdl">
                 <div class="entry-content">
                   <div class="entry-title">
                   <h4 ng-hide="current_gallery.id">Select or Create a new Gallery</h4>
@@ -126,11 +21,11 @@
                 </div>               
               </div>
 
-            <div class="col-md-2">
-                <aside class="entry-left">
+            <div class="col-md-4">
+                <aside class="entry-right">
                     <div id="postbox-container1" class="post-box">
-                        <h3>Published Pages</h3>
                         <div class="entry-content">
+                            <h3>Published Galleries</h3>
                             <div class="list_wrapper">
                                 <div class="list">
                                     <div class="item" ng-repeat="gallery in gallery_list">
@@ -144,19 +39,25 @@
             </div> 
 
         <div style="clear: both;">
-            <li><<i class="fa fa-paint-brush"><label> Images</label></i></li>
+            <br>
+            <h3>Images</h3>
              <div style="clear: both;"></div>
             <div class="images">
                 <div class="image" ng-repeat="image in current_image_list">
-                    <img src="/galleries/{{ image.filename }}">
-                    <br>
-                    {{ image.name }} ({{ image.filename }})
+                    <div class = "image-block">
+                        <img src="/galleries/{{ image.filename }}">
+                        <div class = "image-title">
+                            {{ image.name }} 
+                            <br>
+                            ({{ image.filename }})
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <br>
         <div style="clear: both;">
-            <li><i class="fa fa-cogs"></i><label> Add New</label></li>           
+            <h3> Add New</h3>           
             <div class="images">                
                 <p ng-show="current_gallery.id"> 
                     <input type = "file" file-model = "myFile"/>
