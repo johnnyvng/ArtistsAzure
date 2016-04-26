@@ -44,7 +44,7 @@ Route::get('/', 'PageController@index');
 Route::get('/about', 'PageController@about'); 
 // Service page 
 // Route::get('/services', 'ServicesController@services');
-Route::get('/services', 'ServiceController@service');
+Route::get('/service', 'ServiceController@service');
 // Clients pages
 Route::get('/government', 'ServiceController@government');
 Route::get('/largeestate', 'ServiceController@largeestate');
@@ -52,7 +52,7 @@ Route::get('/commercial', 'ServiceController@commercial');
 // Gallery page
 Route::get('/gallery/{id?}', 'GalleryController@index');
 // Gallery for S3
-Route::get('/galleryS3/{id?}', 'GalleryS3Controller@index');
+// Route::get('/galleryS3/{id?}', 'GalleryS3Controller@index');
 // Contact page
 Route::get('/contact', 'ContactController@contact');
 Route::post('/contact/{id?}', 'PageController@save_contact_form');
@@ -103,8 +103,8 @@ Route::group(['middleware' => 'web'], function () {
 	Route::resource('ajax/submission','SubmissionAdminController');
 
 	/*upload file using GalleryS3AdminController with uploadImage function*/
-	Route::post('ajax/upload-file', 'GalleryS3AdminController@uploadImage');
-	Route::post('ajax/delete-single-image', 'GalleryS3AdminController@deleteSingleImage');
+	// Route::post('ajax/upload-file', 'GalleryS3AdminController@uploadImage');
+	// Route::post('ajax/delete-single-image', 'GalleryS3AdminController@deleteSingleImage');
 
 
 });
