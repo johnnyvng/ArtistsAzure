@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-8 pdl pdr">
               <div class="header-banner">
-                  <img src="img/home-slide.jpg" class="img-responsive" alt="">
+                  <img src="{{url('img/home-slide.jpg') }}" class="img-responsive" alt="">
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
