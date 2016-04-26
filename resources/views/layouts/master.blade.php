@@ -9,7 +9,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-theme.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">   
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/allinone_carousel.css') }}">   
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/dropzone/dist/basic.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/dropzone/dist/dropzone.css') }}">
@@ -17,15 +18,46 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/angular-loading-bar/build/loading-bar.min.css')}}">
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
         <!-- Styles -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    
+    </head>    
     <body>
-    <header class="header-wrapper" role="banner">
+    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">          
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>        
+          <a class="navbar-brand" href="{{url('/')}}">
+            <img src="{{url('img/logo.jpg') }}" width=100 height=100></img>
+          </a> </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{url('/')}}" class="page-scroll">Home</a></li>
+            <li><a href="{{url('/about')}}" class="page-scroll">About</a></li>
+            <li class="dropdown">
+                    <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="page-scroll">Services <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{url('/service')}}">Full Services</a></li>
+                        <li><a href="{{url('/government')}}">Government</a></li>
+                        <li><a href="{{url('/largeestate')}}">Large Estate</a></li>
+                        <li><a href="{{url('/commercial')}}">Commercial</a></li>
+                      </ul>
+                  </li>
+            <li><a href="{{url('/gallery')}}" class="page-scroll">Gallery</a></li>
+            <!-- <li><a href="#testimonials-section" class="page-scroll">Testimonials</a></li> -->
+            <li><a href="{{url('/contact')}}" class="page-scroll">Contact</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse --> 
+      </div>
+      <!-- /.container-fluid --> 
+    </nav>
+
+    <!-- <header class="header-wrapper" role="banner">
       <nav class="navbar" role="navigation">
         <div class="container">
           <div class="row">
@@ -51,22 +83,23 @@
                   <li class="dropdown">
                     <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{url('/services')}}">Full Services</a></li>
+                        <li><a href="{{url('/service')}}">Full Services</a></li>
                         <li><a href="{{url('/government')}}">Government</a></li>
                         <li><a href="{{url('/largeestate')}}">Large Estate</a></li>
                         <li><a href="{{url('/commercial')}}">Commercial</a></li>
                       </ul>
                   </li>
                   <li><a href="{{url('/gallery')}}">Gallery</a></li>
-                  <li><a href="{{url('/contact')}}">Contact</a></li>
+                  <li><a href="{{url('/contact')}}">Contact Us</a></li>
                 </ul>
               </div><!--/.navbar-collapse -->
             </div>
           </div><!--row-->
         </div>
       </nav>
-    </header>
+    </header> -->
     <!-- Main jumbotron for a primary marketing message or call to action -->
+
     @yield('content')
   </body>
 

@@ -5,7 +5,9 @@
 @section('content')
     <main class="main-wrapper" role="main">
       <div class="container">
-          <h3 class="gallery-title">Landscaping</h3>
+         <div class="content-wrapper">
+              <div id="containingDiv">
+         <!--  <h3 class="gallery-title">Landscaping</h3>
          <div class="gallery" id="Landscaping-gallery">  
        
         <div class="gallery" id="Landscaping-gallery">  
@@ -19,12 +21,14 @@
           <a href="img/image6.jpg"><img src="img/thumbs/thumb6.jpg" alt="" title=""/></a>
           <a href="img/image7.jpg" class="big"><img src="img/thumbs/thumb7.jpg" alt="" title=""/></a>
           <a href="img/image8.jpg"><img src="img/thumbs/thumb8.jpg" alt="" title=""/></a>
-          <div class="clearfix"></div>
+          <div class="clearfix"></div> -->
+          <br />
+          <br />
 
           <div class="container">
             <div class="content">
                 <div class="g_list">
-                    All Galleries:<br>
+                    <h1>All Galleries</h1><br>
                     @foreach( $all_galleries as $g)
                         <a href="/gallery/{{$g->id}}">{{ $g->name }}</a> &nbsp;&nbsp;&nbsp;
                     @endforeach
@@ -42,6 +46,8 @@
             </div>
         </div>
           
+        </div>
+        </div>
         </div>
       </div><!--container-->  
     </main>
