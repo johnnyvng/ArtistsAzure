@@ -30,3 +30,84 @@ S3_SECRET=nudfU9pfx55SGnsp483CSwWJhPfQWcaGlvs6ZRV6
 S3_BUCKET=project491
 S3_REGION=us-east-1
 S3_URL=http://s3.amazonaws.com/project491/
+
+Account info:
+WebaccMSA001@outlook.com 	created_at 04/17/16
+PA$$w0rd123456!!
+
+							Getting Started with AZURE WEB HOSTING
+
+http://blog.qbotx.com/basic-laravel-5-on-microsoft-azure-part-1/
+http://blog.qbotx.com/laravel-5-on-azure-part-2/							
+http://blog.qbotx.com/laravel-5-on-azure-part-3/
+													
+WEB APP SETTING
+App Name (.azurewebsites.net): Project491
+Subscription Type: Free Trial
+Resource Group: new - MIS491Resource
+App Service Plan/Location: Name: Project491ASP
+Location: East US
+Pricing Tier: F1 Free / D1 Shared with custom domain / S1 Basic (Preferred)
+The IP Address to use when you configure A Records: 191.237.128.238
+
+Install extensions (composer, php admin) on Azure
+
+Go to Setting/General/ApplicationSettings, select:
+.NET: v4.6
+PHP: 5.6
+Java: Off
+Python: Off
+Platform: 32-bit
+Web sockets: Off
+Always On: Off
+Managed Pipeline Version: Integrated
+*** Inside app settings, select:
+WEBSITE_NODE_DEFAULT_VERSION: default: 0.10.32 / 4.2.3
+APP_ENV: local
+APP_DEBUG: true
+SCM_REPOSITORY_PATH: ..\repository
+SCM_TARGET_PATH: ..
+APP_KEY: add later
+***Virtual applications and directories
+/: site\public
+
+*** Before deploying the any project, we need to create/clone a basic new project so that Azure can run deployment script first.
+After that, deployment of other project can start
+
+Go to Setting/Publishing/Deployment Source, select:
+Choose Source: GitHub
+Authorization: sign in with username/password
+Choose project:
+Choose branch:
+
+MySQL Database SETTING
+Database Name: MIS491ProjectDB
+Database Type: Shared
+Resource group: MIS491Resource
+Location: East US
+Pricing Tier: Mercury
+Legal Terms: Authorized
+Location: East US
+Hostname: us-cdbr-azure-east-c.cloudapp.net
+Port: 3306
+Username: be28560bc36251
+Password: 56e32a07
+Connection String: Database=MIS491ProjectDB;Data Source=us-cdbr-azure-east-c.cloudapp.net;User Id=be28560bc36251;Password=56e32a07
+Subscription Id: d96709a9-b700-4669-85d8-4ba29c2e195b
+Subscription Name: Free Trial
+
+
+
+MSSQL Database SETTING
+Database Name: MIS491ProjectDB
+Subscription: Free Trial
+Resource group: MIS491Resource
+Select Source: Blank Database
+Server:
+- Create: new Server
+- Server name: mis491projectserver
+- Server admin login: adminMSA001
+- Password: PA$$w0rd123456!!
+- Location: East US 2
+Pricing: Basic
+Corellation: SQL_Latin1_General_CP1_CI_AS
