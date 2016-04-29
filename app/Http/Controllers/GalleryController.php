@@ -15,11 +15,9 @@ class GalleryController extends Controller
     //
     public function index ($id = 1)
     {
-
         $galleries = Gallery::all();
         // return $galleries;
         $gallery = Gallery::find($id);
-        return view('gallery', ['gallery' => $gallery, 'all_galleries' => $galleries]);
-        
+        return view('gallery', ['gallery' => $gallery, 'all_galleries' => $galleries]);        
     }
 }

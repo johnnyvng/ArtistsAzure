@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="adminApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -24,40 +24,40 @@
         <!-- Styles -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     </head>    
-    <body>
-    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
-      <div class="container"> 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">          
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>        
-          <a class="navbar-brand" href="{{url('/')}}">
-            <img src="{{url('img/logo.jpg') }}" width=100 height=100></img>
-          </a> </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{url('/')}}" class="page-scroll">Home</a></li>
-            <li><a href="{{url('/about')}}" class="page-scroll">About</a></li>
-            <li class="dropdown">
-                    <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="page-scroll">Services <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="{{url('/service')}}">Full Services</a></li>
-                        <li><a href="{{url('/government')}}">Government</a></li>
-                        <li><a href="{{url('/largeestate')}}">Large Estate</a></li>
-                        <li><a href="{{url('/commercial')}}">Commercial</a></li>
-                      </ul>
-                  </li>
-            <li><a href="{{url('/gallery')}}" class="page-scroll">Gallery</a></li>
-            <!-- <li><a href="#testimonials-section" class="page-scroll">Testimonials</a></li> -->
-            <li><a href="{{url('/contact')}}" class="page-scroll">Contact</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse --> 
-      </div>
-      <!-- /.container-fluid --> 
-    </nav>
 
-    <!-- <header class="header-wrapper" role="banner">
+    <header class="header-wrapper" role="banner">
+        <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+          <div class="container"> 
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">          
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>        
+              <a class="navbar-brand" href="{{url('/')}}"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{url('/')}}" class="page-scroll">Home</a></li>
+                <li><a href="{{url('/about')}}" class="page-scroll">About</a></li>
+                <li class="dropdown">
+                        <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="page-scroll">Services <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="{{url('/service')}}">Full Services</a></li>
+                            <li><a href="{{url('/government')}}">Government</a></li>
+                            <li><a href="{{url('/largeestate')}}">Large Estate</a></li>
+                            <li><a href="{{url('/commercial')}}">Commercial</a></li>
+                          </ul>
+                      </li>
+                <li><a href="{{url('/gallery')}}" class="page-scroll">Gallery</a></li>
+                <!-- <li><a href="#testimonials-section" class="page-scroll">Testimonials</a></li> -->
+                <li><a href="{{url('/contact')}}" class="page-scroll">Contact</a></li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse --> 
+          </div>
+          <!-- /.container-fluid --> 
+        </nav>
+      
+
       <nav class="navbar" role="navigation">
         <div class="container">
           <div class="row">
@@ -69,37 +69,29 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
+                <<br>
                 <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/logo.jpg')}}" class="img-responsive" alt="logo"></a>
               </div>
             </div>
+            <br><br>
             <div class="col-md-8 pdl pdr">
               <div class="header-banner">
                   <img src="{{url('img/home-slide.jpg') }}" class="img-responsive" alt="">
-              </div>
-              <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                  <li><a href="{{url('/')}}">Home</a></li>
-                  <li><a href="{{url('/about')}}">About</a></li>
-                  <li class="dropdown">
-                    <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="{{url('/service')}}">Full Services</a></li>
-                        <li><a href="{{url('/government')}}">Government</a></li>
-                        <li><a href="{{url('/largeestate')}}">Large Estate</a></li>
-                        <li><a href="{{url('/commercial')}}">Commercial</a></li>
-                      </ul>
-                  </li>
-                  <li><a href="{{url('/gallery')}}">Gallery</a></li>
-                  <li><a href="{{url('/contact')}}">Contact Us</a></li>
-                </ul>
-              </div><!--/.navbar-collapse -->
+              </div>              
             </div>
-          </div><!--row-->
+          </div>
         </div>
       </nav>
-    </header> -->
+    </header>
     <!-- Main jumbotron for a primary marketing message or call to action -->
 
+
+    <body>
+   
+
+
+
+    
     @yield('content')
   </body>
 

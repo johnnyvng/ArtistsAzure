@@ -13,16 +13,23 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 
+
 class GalleryS3Controller extends Controller
 {
-    //
-    public function index ($id = 1)
-    {
-		// return Gallery::all();
-        $galleries = Gallery::all();        
-        $gallery = Gallery::find($id);
-        return view('gallery', ['gallery' => $gallery, 'all_galleries' => $galleries]);
-    }
 
+	public function viewGalleryList() 
+	{
+		$galleries = Gallery::all();
+
+		return view('galleryS3')->with('galleries', $galleries);
+
+	}
+
+	public function viewGalleryPics($id)
+	{
+		$gallery = Gallery::findOrFail($id);
+
+		return view('galleryS3-view')->with('gallery', $gallery);
+	}
 
 }

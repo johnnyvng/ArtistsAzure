@@ -49,7 +49,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-sm-12" ng-hide="showGallery">Loading...</div>
         <div class="col-sm-3 gallery-container" ng-repeat="gallery in galleries | orderBy:id:true" ng-show="showGallery" ng-click="viewGallery(gallery.id)">
             <div class="panel panel-primary">
@@ -62,7 +62,7 @@
                     Created <strong>@{{gallery.created_at}}</strong>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
       <div class="row">

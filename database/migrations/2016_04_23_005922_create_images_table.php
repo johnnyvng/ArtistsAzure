@@ -27,9 +27,14 @@ class CreateImagesTable extends Migration
 
             $table->increments('id');
             $table->timestamps();
-            $table->string('name', 256);
-            $table->string('filename', 256);
             $table->integer('gallery_id')->unsigned();
+            $table->string('image_name');
+            $table->string('image_size', 10);
+            $table->string('image_mime', 50);
+            $table->string('image_path');
+            $table->integer('created_by');
+            
+
 
             $table->foreign('gallery_id') // country_state_id_foreign
                 ->references('id')->on('galleries') 
