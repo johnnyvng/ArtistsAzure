@@ -14,6 +14,11 @@ class File extends Model
     //
     protected $fillable = ['file_name', 'mime_type', 'file_size', 'file_path', 'status', 'type'];
 
+    public function gallery() 
+    {
+        return $this->belongsTo('App\Gallery');
+    }
+
     public function uploadThumbAndMainImage(Request $request)
     {
         // get basic info
@@ -49,6 +54,7 @@ class File extends Model
             'file_size' => $fileSize,
             'file_path' => env('S3_URL') . "gallery_{$galleryId}/main/" . $filename,
             'type' => 's3',
+            // 'gallery_id' => $galleryId,
         ]);
 
         DB::table('galleries_images')->insert([

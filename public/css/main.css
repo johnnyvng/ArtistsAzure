@@ -416,3 +416,20 @@ padding-left: 0px;
 
   margin-bottom: 10px;
 }
+#gallery-images img{
+  width: 540px;
+  height: 360px;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+#gallery-images ul{
+  margin: 0;
+  padding: 0;
+}
+#gallery-images li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  padding-right: 10px;
+}

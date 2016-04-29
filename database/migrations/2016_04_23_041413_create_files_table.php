@@ -21,6 +21,11 @@ class CreateFilesTable extends Migration
             $table->string('type')->comment('Where the file is stored. S3 / Local');
             $table->boolean('status')->default(0)->comment('Whether the file is being used');
             $table->timestamps();
+            // $table->integer('gallery_id')->unsigned();
+
+             // $table->foreign('gallery_id') // country_state_id_foreign
+             //    ->references('id')->on('galleries') 
+             //    ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

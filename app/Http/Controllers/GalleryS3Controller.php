@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Log;
-// use App\File;
+use App\File;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
+// use Illuminate\Support\Facades\Validator;
 
 
 
@@ -27,9 +27,17 @@ class GalleryS3Controller extends Controller
 
 	public function viewGalleryPics($id)
 	{
-		$gallery = Gallery::findOrFail($id);
+		$galleries = Gallery::all();
 
-		return view('galleryS3-view')->with('gallery', $gallery);
+		$gallery = Gallery::findOrFail($id);		
+
+		$files = File::all();
+
+		return view('galleryS3-view', [
+			'galleries' => $galleries, 
+			'gallery' => $gallery,
+			'files' => $files
+		]);
 	}
 
 }

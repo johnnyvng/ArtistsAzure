@@ -30,7 +30,7 @@
                     <div class="g_list">
                         <h1>All Galleries</h1><br>
                         @foreach( $all_galleries as $g)
-                            <a href="/gallery/{{$g->id}}">{{ $g->name }}</a> &nbsp;&nbsp;&nbsp;
+                            <a href="/gallery/view/{{$g->id}}">{{ $g->name }}</a> &nbsp;&nbsp;&nbsp;
                         @endforeach
                     </div>
                     <div class="title">

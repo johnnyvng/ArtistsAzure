@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="" ng-app="adminApp">
+<html class="no-js" lang="" ng-app="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/dropzone/dist/dropzone.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/angular-bootstrap/ui-bootstrap-csp.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/lightbox2/dist/css/lightbox.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/angular-loading-bar/build/loading-bar.min.css')}}">
         <!-- Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -128,6 +129,7 @@
 <script type="text/javascript" src="{{ URL::asset('bower_components/angular/angular.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('bower_components/angular-route/angular-route.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('bower_components/lightbox2/dist/js/lightbox.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/admin/app.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>  
 <script type="text/javascript" src="{{ URL::asset('js/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>

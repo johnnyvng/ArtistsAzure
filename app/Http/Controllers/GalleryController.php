@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Gallery;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use App\Image;
+use App\File;
 use Log;
 
 class GalleryController extends Controller
@@ -20,4 +21,26 @@ class GalleryController extends Controller
         $gallery = Gallery::find($id);
         return view('gallery', ['gallery' => $gallery, 'all_galleries' => $galleries]);        
     }
+
+    public function viewGalleryList() 
+	{
+		$galleries = Gallery::all();
+
+		return view('galleryS3')->with('galleries', $galleries);
+	}
+
+	public function viewGalleryPics($id)
+	{
+		$galleries = Gallery::all();
+
+		$gallery = Gallery::findOrFail($id);		
+
+		$files = File::all();
+
+		return view('galleryS3-view', [
+			'galleries' => $galleries, 
+			'gallery' => $gallery,
+			'files' => $files
+		]);
+	}
 }

@@ -51,11 +51,11 @@ Route::get('/government', 'ServiceController@government');
 Route::get('/largeestate', 'ServiceController@largeestate');
 Route::get('/commercial', 'ServiceController@commercial');
 // Gallery page
-Route::get('/gallery/{id?}', 'GalleryController@index');
+Route::get('/gallery/', 'GalleryController@index');
 // Gallery for S3
 // Route::get('/galleryS3/{id?}', 'GalleryS3Controller@index');
-Route::get('/galleryS3/list', 'GalleryS3Controller@viewGalleryList');
-Route::get('/galleryS3/view/{id}', 'GalleryS3Controller@viewGalleryPics');
+Route::get('/gallery/list', 'GalleryController@viewGalleryList');
+Route::get('/gallery/view/{id?}', 'GalleryController@viewGalleryPics');
 // Contact page
 Route::get('/contact', 'ContactController@contact');
 Route::post('/contact/{id?}', 'PageController@save_contact_form');
