@@ -16,14 +16,6 @@ class DatabaseSeeder extends Seeder
          $this->call(ClientsSeeder::class);
          $this->call(ServicesCategoriesSeeder::class);
          $this->call(UsersSeeder::class);
-         $this->call(Galleries_Images_Seeder::class);
-
-
-
-         /*
-         $this->call(ImagesSeeder::class);
-         $this->call(GalleriesSeeder::class);
-         
          
          /*$this->call(ServicesImagesSeeder::class);*/
          /*$this->call(GalleriesSeeder::class);*/
