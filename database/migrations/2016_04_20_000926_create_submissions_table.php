@@ -16,6 +16,7 @@ class CreateSubmissionsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name', 256);
+            $table->string('phone', 12);
             $table->text('email', 256);
             $table->string('comment')->nullable();
         });

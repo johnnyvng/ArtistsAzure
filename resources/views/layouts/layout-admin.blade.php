@@ -132,8 +132,8 @@
                         <li><a href=""><span class="glyphicon glyphicon-pushpin"></span>Header</a></li>
                         <li><a href="{{ url('#/pages') }}">Pages</a></li>
                         <li><a href="{{ url('#/galleries') }}">Galleries</a></li>
-                        <li><a href="{{ url('#/galleryS3/add') }}">Add Galleries_S3</a></li>
-                        <li><a href="{{ url('#/galleryS3/view') }}">View Galleries_S3</a></li>
+                        <!-- <li><a href="{{ url('#/galleryS3/add') }}">Add Galleries_S3</a></li> -->
+                        <!-- <li><a href="{{ url('#/galleryS3/view') }}">View Galleries_S3</a></li> -->
                         <li><a href="{{ url('#/services') }}">Services</a></li>
 
                         <li><a href=""><i class="fa fa-comments"></i>Comments</a></li>

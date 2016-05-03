@@ -46,9 +46,9 @@ Route::get('/about', 'PageController@about');
 // Service page 
 Route::get('/service', 'ServiceController@index');
 // Route::get('/services', 'ServicesController@services');
-Route::get('/service/government', 'CategoryController@government');
-Route::get('/service/estate', 'CategoryController@estate');
-Route::get('/service/commercial', 'CategoryController@commercial');
+Route::get('/service/Government Landscaping', 'CategoryController@government');
+Route::get('/service/Estate Landscaping', 'CategoryController@estate');
+Route::get('/service/Commercial Landscaping', 'CategoryController@commercial');
 // Clients pages
 // Route::get('/government', 'ServiceController@government');
 // Route::get('/largeestate', 'ServiceController@largeestate');
@@ -60,7 +60,7 @@ Route::get('/gallery', 'GalleryController@index');
 Route::get('/gallery/list', 'GalleryController@viewGalleryList');
 Route::get('/gallery/view/{id?}', 'GalleryController@viewGalleryPics');
 // Contact page
-Route::get('/contact', 'ContactController@contact');
+Route::get('/contact', 'PageController@contact');
 Route::post('/contact/{id?}', 'PageController@save_contact_form');
 
 // Extra route for tempo page

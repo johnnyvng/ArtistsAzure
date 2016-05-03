@@ -12,13 +12,13 @@
                   <div class="content-wrapper">
                       <h1 class="page-title">About Us</h1>
                       <h3 class="sub-title">{{$headline}}</h3>
-                      <div class="entry-text img-right">
-                          <img src="img/background2.jpg" class="img-responsive" alt="">
+                      <div class="entry-text img-right">                          
                           <p>{!!$body!!}</p>
                       </div>
                   </div><!--content wrapper-->
                 </div>
-                <div class="col-md-4 pdl">
+
+                 <div class="col-md-4 pdl">
                   <aside class="left-sidebar">
                      <div class="widget-single">
                          <img src="img/side-banner.png" class="img-responsive" alt=""> 
@@ -30,6 +30,7 @@
                      </div>
                   </aside>
                 </div>
+                
             </div>
           </div>
         </div>
