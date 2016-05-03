@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Submission;
 use App\Http\Controllers\Controller;
 use App\Image;
+use App\Gallery;
 use Log;
 
 class PageController extends Controller
@@ -21,11 +22,20 @@ class PageController extends Controller
     }
 
     // edit the home page
-    public function index()
+    public function index($id = 1)
     {
+      $image = Image::where('id','$id') ->first();
       $page = Page::where('page_label', 'home')->first();
-      // $image = Image::where('id','1')->first();
-      return view('index', $page);
+      $galleries = Gallery::all();
+      $gallery = Gallery::find($id);
+        
+      return view('index', [
+        'index' => $page, 
+        'gallery' => $gallery, 
+        'all_galleries' => $galleries,
+        'image' => $image
+
+      ]);
       // return view('index', $page, $image);
     }
     public function contact()

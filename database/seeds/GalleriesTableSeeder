@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class GalleriesTableSeeder extends DatabaseSeeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $seedDataFromImages = $this->seedFromCSV(app_path().'/../database/csv/galleries.csv');
+
+        foreach ($seedDataFromImages as $row) 
+        {
+                    
+           DB::table('galleries')->insert($row);
+        }
+    }
+    }
+

@@ -1,4 +1,6 @@
-app.controller('GalleryController', function ($scope, $routeParams, Gallery, Image) {
+app.controller('GalleryController', ['$scope', '$routeParams', 'Gallery', 'Image',  'Lightbox',
+
+	function ($scope, $routeParams, Gallery, Image, Lightbox) {
 
 	$scope.gallery_list = [];			// Variable for all Galleries
 	$scope.current_gallery = null;		// Variable for the page shown in the form
@@ -71,11 +73,15 @@ app.controller('GalleryController', function ($scope, $routeParams, Gallery, Ima
 		$scope.current_image_list = [];
 	}
 
+	$scope.openLightboxModal = function(index) {
+        Lightbox.openModal($scope.gallery_list.images, index);
+    }
+    
 	// Call the startup script
 	init();
 
 
-})
+}])
 .directive('fileModel', ['$parse', function ($parse) {
     return {
        restrict: 'A',

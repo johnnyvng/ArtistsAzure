@@ -12,11 +12,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     	// run this command "composer dump-autoload" before run php artisan migrate:refresh --seed because it will clear the caches
-         $this->call(PagesSeeder::class);
-         $this->call(ClientsSeeder::class);
-         $this->call(ServicesCategoriesSeeder::class);
-         $this->call(UsersSeeder::class);
-         
+        $this->call(UsersSeeder::class);
+        $this->call(PagesSeeder::class);
+        $this->call(ClientsSeeder::class);
+        $this->call(CategoriesSeeder::class);
+        $this->call(GalleriesSeeder::class);
+        $this->call(ServicesSeeder::class); 
+        $this->call(ImagesSeeder::class);
+
+         // $this->call(CategoriesServicesSeeder::class);
          /*$this->call(ServicesImagesSeeder::class);*/
          /*$this->call(GalleriesSeeder::class);*/
          /*$this->call(CategoriesSeeder::class);*/

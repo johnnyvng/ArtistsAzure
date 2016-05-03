@@ -15,12 +15,15 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('categoryID')->unsigned();
-            $table->integer('clientID')->unsigned();
             $table->string ('service_name', 255)->unique();
             $table->text('service_content')->nullable();
             $table->text('description')->nullable();
-            $table->float('prices')->nullable();            
+            $table->float('prices')->nullable();
+            $table->integer('category_id')->unsigned();
+            
+            $table->foreign('category_id') 
+                ->references('id')->on('categories') 
+                ->onUpdate('cascade')->onDelete('cascade');
 
         });
     }

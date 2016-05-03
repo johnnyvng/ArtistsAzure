@@ -40,11 +40,14 @@ class CreateImagesTable extends Migration
             $table->string('name', 256);
             $table->string('filename', 256);
             $table->integer('gallery_id')->unsigned();
-            
+            $table->integer('service_id')->unsigned()->nullable();      
 
-
-            $table->foreign('gallery_id') // country_state_id_foreign
+            $table->foreign('gallery_id') 
                 ->references('id')->on('galleries') 
+                ->onUpdate('cascade')->onDelete('cascade');
+
+            $table->foreign('service_id') 
+                ->references('id')->on('services') 
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }

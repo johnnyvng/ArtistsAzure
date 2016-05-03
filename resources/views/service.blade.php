@@ -1,36 +1,37 @@
 @extends('layouts.master')
 
-@section('title', 'Our Services')
+@section('title', 'Our Full Services')
 
 @section('content')
-    <main class="main-wrapper">
+    <main class="main-wrapper" role="main">
       <div class="container">
         <div class="row">
-           <div class="content-wrapper">
+            <div class="content-wrapper">
               <div id="containingDiv">
-                  <div class="col-md-8">
+              	<div class="col-md-12">
                     <div class="content-wrapper">
-                        <h4 class="page-title"><b>Featured Service: {{$service_name}}</b></h4>
-                           <p>{!!$description!!}</p>
-                    </div><!--content wrapper-->
+                       <h2 class="page-title"><b><center>We Bring Outstanding Services</center></b></h2>
+                         	<div class="service-wrapper">
+                      		<div class="row">
+                          @for($i = 0; $i < 10; $i++)                       
+                             <div class="service_content_wrapper"> 
+                             	  <div class="service-single">
+                                <a href="{{ url('/galleries/' . $all_galleries[$i]->filename)}}" data-lightbox="myFullService">                                                           
+                                <img src="/galleries/{{$all_galleries[$i]->filename }}" class="img-responsive" alt="">
+                                </a>
+                                <h5><strong>{!!$all_services[$i]->service_name!!}</strong></h5>
+                                    <p>{!!$all_services[$i]->service_content!!}</p> 
+                                </div>                                       
+                              </div> 
+                          @endfor
+                      	</div>             
+                      </div>
                   </div>
-
-                  <div class="col-md-4 pdl">
-                    <aside class="left-sidebar">
-                       <div class="widget-single">
-                           <img src="img/side-banner.png" class="img-responsive" alt="">  
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                           consequat.</p>
-                       </div>
-                    </aside>
-                  </div>
-
-              </div>
+                </div><!--content wrapper-->
             </div>
           </div>
-      </div><!--container-->  
-    </main>
+        </div>
+    </div><!--container-->  
+  </main>
 
 @endsection

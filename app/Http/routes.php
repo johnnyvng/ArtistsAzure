@@ -44,14 +44,17 @@ Route::get('/', 'PageController@index');
 // About page
 Route::get('/about', 'PageController@about'); 
 // Service page 
+Route::get('/service', 'ServiceController@index');
 // Route::get('/services', 'ServicesController@services');
-Route::get('/service', 'ServiceController@service');
+Route::get('/service/government', 'CategoryController@government');
+Route::get('/service/estate', 'CategoryController@estate');
+Route::get('/service/commercial', 'CategoryController@commercial');
 // Clients pages
-Route::get('/government', 'ServiceController@government');
-Route::get('/largeestate', 'ServiceController@largeestate');
-Route::get('/commercial', 'ServiceController@commercial');
+// Route::get('/government', 'ServiceController@government');
+// Route::get('/largeestate', 'ServiceController@largeestate');
+// Route::get('/commercial', 'ServiceController@commercial');
 // Gallery page
-Route::get('/gallery/', 'GalleryController@index');
+Route::get('/gallery', 'GalleryController@index');
 // Gallery for S3
 // Route::get('/galleryS3/{id?}', 'GalleryS3Controller@index');
 Route::get('/gallery/list', 'GalleryController@viewGalleryList');

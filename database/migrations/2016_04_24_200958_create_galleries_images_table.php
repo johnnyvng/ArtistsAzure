@@ -17,17 +17,17 @@ class CreateGalleriesImagesTable extends Migration
             $table->integer('gallery_ID')->unsigned()->nullable();
             $table->integer('file_ID')->unsigned()->nullable();
 
-            // $table->foreign('gallery_ID')
-            // ->references('id')
-            // ->on('galleries')
-            // ->onDelete('cascade')
-            // ->onUpdate('cascade');
+            $table->foreign('gallery_ID')
+            ->references('id')
+            ->on('galleries')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
 
-            // $table->foreign('file_ID')
-            // ->references('id')
-            // ->on('files')
-            // ->onDelete('cascade')
-            // ->onUpdate('cascade');
+            $table->foreign('file_ID')
+            ->references('id')
+            ->on('files')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
 
         });
     }

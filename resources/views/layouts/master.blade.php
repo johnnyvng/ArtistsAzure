@@ -12,16 +12,18 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/allinone_carousel.css') }}">   
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/lightslider.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/dropzone/dist/basic.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/dropzone/dist/dropzone.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/angular-bootstrap/ui-bootstrap-csp.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/lightbox2/dist/css/lightbox.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/angular-loading-bar/build/loading-bar.min.css')}}">
+
         <!-- Fonts -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'> -->
+        <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
         <!-- Styles -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     </head>    
@@ -38,19 +40,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{url('/')}}" class="page-scroll">Home</a></li>
-                <li><a href="{{url('/about')}}" class="page-scroll">About</a></li>
+                <li><a href="{{url('/about')}}" class="page-scroll">About Us</a></li>
                 <li class="dropdown">
-                        <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="page-scroll">Services <span class="caret"></span></a>
+                        <a href="{{url('/service')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="page-scroll">Landscape Services<span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                            <li><a href="{{url('/service')}}">Full Services</a></li>
-                            <li><a href="{{url('/government')}}">Government</a></li>
-                            <li><a href="{{url('/largeestate')}}">Large Estate</a></li>
-                            <li><a href="{{url('/commercial')}}">Commercial</a></li>
+                            <li><a href="{{url('service')}}">Full Services</a></li>
+                            <li><a href="{{url('service/government')}}">Government</a></li>
+                            <li><a href="{{url('service/estate')}}">Estate</a></li>
+                            <li><a href="{{url('service/commercial')}}">Commercial</a></li>
                           </ul>
                       </li>
-                <li><a href="{{url('/gallery')}}" class="page-scroll">Gallery</a></li>
+                <li><a href="{{url('/gallery')}}" class="page-scroll">Landscape Gallery</a></li>
                 <!-- <li><a href="#testimonials-section" class="page-scroll">Testimonials</a></li> -->
-                <li><a href="{{url('/contact')}}" class="page-scroll">Contact</a></li>
+                <li><a href="{{url('/contact')}}" class="page-scroll">Contact Us</a></li>
               </ul>
             </div>
             <!-- /.navbar-collapse --> 
@@ -138,6 +140,7 @@
 <script type="text/javascript" src="{{ URL::asset('js/allinone_carousel.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/simple-lightbox.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/lightslider.js') }}"></script>
 <!-- Google Analytics  -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -221,4 +224,62 @@ $(function()
 });
 
 </script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#lightSlider").lightSlider({
+        item: 3,
+        autoWidth: false,
+        slideMove: 1, // slidemove will be 1 if loop is true
+        slideMargin: 10,
+ 
+        addClass: '',
+        mode: "slide",
+        useCSS: true,
+        cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+        easing: 'linear', //'for jquery animation',////
+ 
+        speed: 400, //ms'
+        auto: false,
+        loop: false,
+        slideEndAnimation: true,
+        pause: 2000,
+ 
+        keyPress: false,
+        controls: true,
+        prevHtml: '',
+        nextHtml: '',
+ 
+        rtl:false,
+        adaptiveHeight:false,
+ 
+        vertical:false,
+        verticalHeight:500,
+        vThumbWidth:100,
+ 
+        thumbItem:10,
+        pager: true,
+        gallery: false,
+        galleryMargin: 5,
+        thumbMargin: 5,
+        currentPagerPosition: 'middle',
+ 
+        enableTouch:true,
+        enableDrag:true,
+        freeMove:true,
+        swipeThreshold: 40,
+ 
+        responsive : [],
+ 
+        onBeforeStart: function (el) {},
+        onSliderLoad: function (el) {},
+        onBeforeSlide: function (el) {},
+        onAfterSlide: function (el) {},
+        onBeforeNextSlide: function (el) {},
+        onBeforePrevSlide: function (el) {}
+    });
+});
+</script>
+
+
 </html>

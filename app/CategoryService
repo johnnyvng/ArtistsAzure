@@ -1,0 +1,19 @@
+<?php
+
+namespace App;
+
+use App\Service;
+use App\Category;
+use Illuminate\Database\Eloquent\Model;
+
+class CategoryService extends Model
+{
+    // We don't want anything writing to these fields
+    protected $table = 'categories_services';
+
+    public function categories()
+    {
+    	return $this->hasMany('App\Category');
+    }   
+
+}

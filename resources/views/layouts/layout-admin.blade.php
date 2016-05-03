@@ -86,12 +86,13 @@
             }
             .gallery-image-single 
             {
-            position: relative; 
+            position: relative;
+            padding: 10px; 
             }
             .gallery-image-single .delete-icon 
             {
               position: absolute;
-              bottom: 5px;
+              bottom: 10px;
               right: 50%;
               display: none; 
             }

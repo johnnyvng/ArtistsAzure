@@ -18,7 +18,7 @@ class GalleryController extends Controller
     {
         $galleries = Gallery::all();
         // return $galleries;
-        $gallery = Gallery::find($id);
+        $gallery = Gallery::findOrFail($id);
         return view('gallery', ['gallery' => $gallery, 'all_galleries' => $galleries]);        
     }
 
@@ -26,7 +26,7 @@ class GalleryController extends Controller
 	{
 		$galleries = Gallery::all();
 
-		return view('galleryS3')->with('galleries', $galleries);
+		return view('gallery-list')->with('galleries', $galleries);
 	}
 
 	public function viewGalleryPics($id)
@@ -37,7 +37,7 @@ class GalleryController extends Controller
 
 		$files = File::all();
 
-		return view('galleryS3-view', [
+		return view('gallery-view', [
 			'galleries' => $galleries, 
 			'gallery' => $gallery,
 			'files' => $files

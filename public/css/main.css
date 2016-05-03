@@ -144,6 +144,14 @@ padding: 0px 15px; }
   text-align: center; }
 .main-wrapper #containingDiv {
 margin: 30px 0px; }
+.service_content_wrapper{
+  display: inline-flex;
+  width: 270px;
+  height: 490px;
+  padding-left: 3px;
+  margin-bottom: 7px;
+
+}
 
 /*
 ============================
@@ -245,13 +253,13 @@ float: right;
 }
 
 #admin-content {
-padding-left: 160px;
+padding-left: 150px;
 float: left;
 padding-top: 15px;
 padding-bottom: 15px;
 width: 100%;
-background-color: #F1F1F1; 
-height: 800px;
+height: 100%;
+background-color: #F1F1F1;
 }
 #admin-content .form-control {
 border-color: #BFBEBE; }
@@ -417,7 +425,7 @@ padding-left: 0px;
   margin-bottom: 10px;
 }
 #gallery-images img{
-  width: 540px;
+  width: 270px;
   height: 360px;
   border: 2px solid black;
   margin-bottom: 10px;
