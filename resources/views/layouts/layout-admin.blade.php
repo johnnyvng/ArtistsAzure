@@ -111,7 +111,7 @@
           <ul class="adminmenu">
             <!-- Branding Image -->
             <li><a class="" href="{{ url('/') }}">Home Page</a></li>
-            <li><a href="{{ url('/home') }}"<span class="glyphicon glyphicon-dashboard"><strong> Administration Dashboard</strong></span></a></li>
+            <li><a href="{{ url('/admin') }}"<span class="glyphicon glyphicon-dashboard"><strong> Administration Dashboard</strong></span></a></li>
 
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">

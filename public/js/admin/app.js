@@ -35,7 +35,7 @@ app.config(['$routeProvider',function($routeProvider) {
 			controller: 'SubmissionController',
 			templateUrl: '/js/admin/partials/submissionTmpl.html'
 		})
-		.otherwise({ redirectTo: '/pages' });	
+		.otherwise({ redirectTo: '/' });	
 
 }]);
 

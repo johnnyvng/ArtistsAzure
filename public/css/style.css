@@ -140,7 +140,7 @@ hr {
 }
 /* Home Style */
 header {
-	background: url(../img/header-bg.jpg) no-repeat bottom center;
+/*	background: url(../img/header-bg.jpg) no-repeat bottom center;*/
 	background-size: cover;
 	color: #d9e0e2;
 	position: relative;

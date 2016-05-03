@@ -45,14 +45,11 @@ Route::get('/', 'PageController@index');
 Route::get('/about', 'PageController@about'); 
 // Service page 
 Route::get('/service', 'ServiceController@index');
+// Clients pages
 // Route::get('/services', 'ServicesController@services');
 Route::get('/service/Government Landscaping', 'CategoryController@government');
 Route::get('/service/Estate Landscaping', 'CategoryController@estate');
 Route::get('/service/Commercial Landscaping', 'CategoryController@commercial');
-// Clients pages
-// Route::get('/government', 'ServiceController@government');
-// Route::get('/largeestate', 'ServiceController@largeestate');
-// Route::get('/commercial', 'ServiceController@commercial');
 // Gallery page
 Route::get('/gallery', 'GalleryController@index');
 // Gallery for S3
